@@ -19,47 +19,39 @@ export default function LandingPage({ onStartInterview }) {
 
   // Authentic Company SVG Logos
   const companyLogos = [
-    {
-      name: "Google",
-      svg: (
-        <svg className="h-8 w-auto fill-current text-slate-300 hover:text-white transition" viewBox="0 0 24 24">
-          <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-        </svg>
-      )
-    },
-    {
-      name: "Meta",
-      svg: (
-        <svg className="h-8 w-auto fill-current text-slate-300 hover:text-white transition" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      )
-    },
-    {
-      name: "Amazon",
-      svg: (
-        <svg className="h-8 w-auto fill-current text-slate-300 hover:text-white transition" viewBox="0 0 24 24">
-          <path d="M13.621 13.06c-1.656.241-2.906.634-3.75 1.18-.844.545-1.266 1.3-1.266 2.266 0 1.025.438 1.83 1.313 2.414.875.584 1.953.876 3.234.876 1.594 0 2.93-.46 4.008-1.382 1.078-.922 1.617-2.05 1.617-3.387v-.985c-.938.31-2.656.65-5.156 1.018zm1.922-9.75c-2.438 0-4.523.633-6.258 1.9-1.734 1.265-2.601 2.875-2.601 4.828 0 1.688.625 3.031 1.875 4.031 1.25 1 2.922 1.5 5.016 1.5 1.938 0 3.594-.375 4.969-1.125.219 1.188.797 2.063 1.734 2.625.938.563 2.125.844 3.563.844 1.031 0 2.016-.14 2.953-.422l-.469-2.016c-.656.219-1.281.328-1.875.328-.844 0-1.484-.203-1.922-.61-.438-.406-.656-1.078-.656-2.015V7.61c0-1.313-.484-2.328-1.453-3.047-.969-.719-2.586-1.253-4.851-1.253zm11.39 17.578c-1.281 1.016-2.984 1.766-5.109 2.25-2.125.484-4.281.727-6.469.727-3.563 0-6.797-.68-9.703-2.039-2.906-1.36-5.109-3.211-6.609-5.555l2.062-1.547c1.281 2.016 3.141 3.594 5.578 4.734 2.438 1.141 5.125 1.711 8.063 1.711 2.031 0 4.031-.227 6-.68 1.969-.453 3.531-1.133 4.688-2.039l1.5 1.438z"/>
-        </svg>
-      )
-    },
-    {
-      name: "Microsoft",
-      svg: (
-        <svg className="h-8 w-auto fill-current text-slate-300 hover:text-white transition" viewBox="0 0 24 24">
-          <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/>
-        </svg>
-      )
-    },
-    {
-      name: "GitHub",
-      svg: (
-        <svg className="h-8 w-auto fill-current text-slate-300 hover:text-white transition" viewBox="0 0 24 24">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
-      )
-    }
-  ];
+  {
+    name: "Google",
+    logo: "https://cdn.simpleicons.org/google"
+  },
+  {
+    name: "Microsoft",
+    logo: "https://cdn.simpleicons.org/microsoft"
+  },
+  {
+    name: "Amazon",
+    logo: "https://cdn.simpleicons.org/amazon"
+  },
+  {
+    name: "Meta",
+    logo: "https://cdn.simpleicons.org/meta"
+  },
+  {
+    name: "GitHub",
+    logo: "https://cdn.simpleicons.org/github"
+  },
+  {
+    name: "OpenAI",
+    logo: "https://cdn.simpleicons.org/openai"
+  },
+  {
+    name: "NVIDIA",
+    logo: "https://cdn.simpleicons.org/nvidia"
+  },
+  {
+    name: "Netflix",
+    logo: "https://cdn.simpleicons.org/netflix"
+  }
+];
 
   const mentors = [
     {
@@ -170,20 +162,93 @@ export default function LandingPage({ onStartInterview }) {
             </section>
 
             {/* WHERE OUR GRADUATES WORK (Only Authentic Logos) */}
-            <section className="py-12 border-t border-slate-800/80">
-              <div className="text-center mb-10">
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-1">PROVEN CAREER TRANSITIONS</span>
-                <h2 className="text-2xl font-black text-white">Where Our Graduates Work</h2>
-              </div>
+        {/* WHERE OUR GRADUATES WORK */}
+<section className="py-16 border-t border-slate-800/80 overflow-hidden">
 
-              <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 opacity-80 hover:opacity-100 transition">
-                {companyLogos.map((comp, idx) => (
-                  <div key={idx} className="flex items-center justify-center grayscale hover:grayscale-0 transition duration-300">
-                    {comp.svg}
-                  </div>
-                ))}
-              </div>
-            </section>
+  <div className="text-center mb-12">
+    <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
+      PROVEN CAREER TRANSITIONS
+    </span>
+
+    <h2 className="text-2xl md:text-3xl font-black text-white">
+      Where Our Graduates Work
+    </h2>
+  </div>
+
+
+  {/* MARQUEE */}
+  <div className="relative w-full overflow-hidden">
+
+    {/* Left Fade */}
+    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
+
+    {/* Right Fade */}
+    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
+
+
+    {/* Moving Track */}
+    <div className="flex w-max animate-logo-marquee hover:[animation-play-state:paused]">
+
+      {/* FIRST SET */}
+      <div className="flex items-center gap-20 md:gap-28 px-10">
+
+        {companyLogos.map((company, index) => (
+          <div
+            key={`first-${index}`}
+            className="flex items-center justify-center min-w-[130px] opacity-60 hover:opacity-100 transition duration-300"
+          >
+            <img
+              src={company.logo}
+              alt={company.name}
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+            />
+          </div>
+        ))}
+
+      </div>
+
+
+      {/* DUPLICATE SET - FOR CONTINUOUS LOOP */}
+      <div className="flex items-center gap-20 md:gap-28 px-10">
+
+        {companyLogos.map((company, index) => (
+          <div
+            key={`second-${index}`}
+            className="flex items-center justify-center min-w-[130px] opacity-60 hover:opacity-100 transition duration-300"
+          >
+            <img
+              src={company.logo}
+              alt={company.name}
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+            />
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* Marquee Animation */}
+  <style>{`
+    @keyframes logo-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-logo-marquee {
+      animation: logo-marquee 25s linear infinite;
+    }
+  `}</style>
+
+</section>
 
             {/* EARN COMPLETION CERTIFICATE SECTION */}
             <section className="py-16 border-t border-slate-800/80">
