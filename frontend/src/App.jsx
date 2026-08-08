@@ -1,15 +1,16 @@
-// client/src/App.jsx
 import { useState } from 'react';
-import CandidateSelector from './components/CandidateSelector';
+import LandingPage from './components/LandingPage';
 import InterviewRoom from './components/InterviewRoom';
-import FeedbackReport from './components/FeedbackModel';
+// import LandingPage from './components/LandingPage';
+// import InterviewRoom from './components/InterviewRoom';
+// import FeedbackReport from './components/FeedbackReport';
 
 export default function App() {
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [sessionId, setSessionId] = useState(null);
   const [feedback, setFeedback] = useState(null);
 
-  const handleSelectCandidate = (candidate) => {
+  const handleStartInterview = (candidate) => {
     const newSessionId = `session-${Date.now()}`;
     setSelectedCandidate(candidate);
     setSessionId(newSessionId);
@@ -23,8 +24,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen">
-      {!selectedCandidate && <CandidateSelector onSelectCandidate={handleSelectCandidate} />}
+    <div className="min-h-screen bg-slate-950">
+      {!selectedCandidate && (
+        <LandingPage onStartInterview={handleStartInterview} />
+      )}
 
       {selectedCandidate && !feedback && (
         <InterviewRoom
