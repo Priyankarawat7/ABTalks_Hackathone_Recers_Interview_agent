@@ -21,36 +21,36 @@ export default function LandingPage({ onStartInterview }) {
   const companyLogos = [
   {
     name: "Google",
-    logo: "https://cdn.simpleicons.org/google"
+    logo: "https://cdn.simpleicons.org/google",
   },
   {
     name: "Microsoft",
-    logo: "https://cdn.simpleicons.org/microsoft"
+    logo: "https://cdn.simpleicons.org/microsoft",
   },
   {
     name: "Amazon",
-    logo: "https://cdn.simpleicons.org/amazon"
+    logo: "https://cdn.simpleicons.org/amazon",
   },
   {
     name: "Meta",
-    logo: "https://cdn.simpleicons.org/meta"
+    logo: "https://cdn.simpleicons.org/meta",
   },
   {
     name: "GitHub",
-    logo: "https://cdn.simpleicons.org/github"
+    logo: "https://cdn.simpleicons.org/github",
   },
   {
     name: "OpenAI",
-    logo: "https://cdn.simpleicons.org/openai"
+    logo: "https://cdn.simpleicons.org/openai",
   },
   {
     name: "NVIDIA",
-    logo: "https://cdn.simpleicons.org/nvidia"
+    logo: "https://cdn.simpleicons.org/nvidia",
   },
   {
     name: "Netflix",
-    logo: "https://cdn.simpleicons.org/netflix"
-  }
+    logo: "https://cdn.simpleicons.org/netflix",
+  },
 ];
 
   const mentors = [
@@ -161,68 +161,95 @@ export default function LandingPage({ onStartInterview }) {
               </div>
             </section>
 
-            {/* WHERE OUR GRADUATES WORK (Only Authentic Logos) */}
-        {/* WHERE OUR GRADUATES WORK */}
+            {/* EARN COMPLETION CERTIFICATE SECTION */}
+       {/* WHERE OUR GRADUATES WORK */}
 <section className="py-16 border-t border-slate-800/80 overflow-hidden">
-
-  <div className="text-center mb-12">
-    <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-      PROVEN CAREER TRANSITIONS
-    </span>
-
-    <h2 className="text-2xl md:text-3xl font-black text-white">
-      Where Our Graduates Work
-    </h2>
-  </div>
 
 
   {/* MARQUEE */}
   <div className="relative w-full overflow-hidden">
 
     {/* Left Fade */}
-    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
+    <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
 
     {/* Right Fade */}
-    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
+    <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
 
 
     {/* Moving Track */}
-    <div className="flex w-max animate-logo-marquee hover:[animation-play-state:paused]">
+    <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
 
-      {/* FIRST SET */}
-      <div className="flex items-center gap-20 md:gap-28 px-10">
+      {/* FIRST ROW */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
 
-        {companyLogos.map((company, index) => (
-          <div
-            key={`first-${index}`}
-            className="flex items-center justify-center min-w-[130px] opacity-60 hover:opacity-100 transition duration-300"
-          >
-            <img
-              src={company.logo}
-              alt={company.name}
-              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
-            />
-          </div>
-        ))}
+        {/* Cadbury */}
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
+
+        {/* Canon */}
+        <span className="company-logo company-canon">
+          Canon
+        </span>
+
+        {/* Spark */}
+        <span className="company-logo company-spark">
+          Spark
+        </span>
+
+        {/* Amazon */}
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
+
+        {/* Facebook */}
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
+
+        {/* Tinder */}
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
+
+        {/* Airbnb */}
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
 
       </div>
 
 
-      {/* DUPLICATE SET - FOR CONTINUOUS LOOP */}
-      <div className="flex items-center gap-20 md:gap-28 px-10">
+      {/* DUPLICATE ROW FOR INFINITE LOOP */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
 
-        {companyLogos.map((company, index) => (
-          <div
-            key={`second-${index}`}
-            className="flex items-center justify-center min-w-[130px] opacity-60 hover:opacity-100 transition duration-300"
-          >
-            <img
-              src={company.logo}
-              alt={company.name}
-              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
-            />
-          </div>
-        ))}
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
+
+        <span className="company-logo company-canon">
+          Canon
+        </span>
+
+        <span className="company-logo company-spark">
+          Spark
+        </span>
+
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
+
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
+
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
+
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
 
       </div>
 
@@ -231,9 +258,106 @@ export default function LandingPage({ onStartInterview }) {
   </div>
 
 
-  {/* Marquee Animation */}
+  {/* Styling + Animation */}
   <style>{`
-    @keyframes logo-marquee {
+
+    .company-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      color: #d8dbea;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .company-logo:hover {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+
+    /* CADBURY STYLE */
+    .company-cadbury {
+      font-family: cursive;
+      font-size: 31px;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* CANON STYLE */
+    .company-canon {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+
+    /* SPARK STYLE */
+    .company-spark {
+      font-family: cursive;
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+
+    /* AMAZON STYLE */
+    .company-amazon {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      position: relative;
+    }
+
+    .company-amazon::after {
+      content: "";
+      position: absolute;
+      width: 38px;
+      height: 8px;
+      border-bottom: 3px solid #d8dbea;
+      border-radius: 50%;
+      bottom: -5px;
+      right: 2px;
+      transform: rotate(5deg);
+    }
+
+
+    /* FACEBOOK STYLE */
+    .company-facebook {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* TINDER STYLE */
+    .company-tinder {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 29px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* AIRBNB STYLE */
+    .company-airbnb {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+
+    /* MARQUEE */
+    @keyframes company-marquee {
       from {
         transform: translateX(0);
       }
@@ -243,69 +367,13 @@ export default function LandingPage({ onStartInterview }) {
       }
     }
 
-    .animate-logo-marquee {
-      animation: logo-marquee 25s linear infinite;
+    .animate-company-marquee {
+      animation: company-marquee 24s linear infinite;
     }
+
   `}</style>
 
 </section>
-
-            {/* EARN COMPLETION CERTIFICATE SECTION */}
-            <section className="py-16 border-t border-slate-800/80">
-              <div className="bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10">
-                
-                <div className="max-w-xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
-                    <Trophy className="w-3.5 h-3.5" /> Industry Verified Milestone
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                    Earn an Industry Recognized AI Architect Certificate
-                  </h2>
-                  <p className="mt-4 text-slate-400 text-sm leading-relaxed">
-                    Upon completing all 31-day cohort missions and passing the live AI technical interview assessment, receive a shareable digital credential backed by ABTalks.
-                  </p>
-
-                  <ul className="space-y-3 mt-6 text-xs text-slate-300">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Verified Credential ID & Authenticity QR Code
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Direct One-Click Share to LinkedIn & GitHub Profiles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Includes Detailed Performance Assessment Scorecard
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="w-full max-w-md bg-slate-950 border border-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 blur-2xl rounded-full pointer-events-none" />
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black text-lg">
-                      AB
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded">
-                      VERIFIED CREDENTIAL
-                    </span>
-                  </div>
-
-                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block">CERTIFICATE OF COMPLETION</span>
-                  <h3 className="text-lg font-extrabold text-white mt-1">Generative AI & Agentic Architect</h3>
-                  
-                  <p className="text-xs text-slate-400 mt-4">This certifies that <span className="text-indigo-300 font-bold">Graduate Candidate</span> has successfully mastered 31 Days of RAG, Fine-Tuning, MCP & Agents.</p>
-
-                  <div className="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-[10px] font-mono text-slate-500">
-                    <span>Credential ID: <span className="text-slate-300">AB-2026-AI99</span></span>
-                    <span className="text-indigo-400 font-bold flex items-center gap-1 cursor-pointer">
-                      <Share2 className="w-3 h-3" /> Shareable
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-            </section>
-
             {/* MENTORS SECTION */}
             <section className="py-16 border-t border-slate-800/80">
               <div className="text-center mb-12">
