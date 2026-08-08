@@ -7,11 +7,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const interviewRoutes = require("./routes/interviewRoutes");
+
 app.get("/", (req, res) => {
     res.json({
         message: "Interview Agent API is running"
     });
 });
+
+app.use("/api/interview", interviewRoutes);
 
 const PORT = process.env.PORT || 5000;
 
