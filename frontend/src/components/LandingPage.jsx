@@ -1,27 +1,12 @@
-import { useState } from "react";
-import {
-  Sparkles,
-  BookOpen,
-  Users,
-  Play,
-  ChevronDown,
-  ChevronUp,
-  Star
-} from "lucide-react";
-import candidatesData from "../data/candidates.json";
-import curriculumData from "../data/curriculum.json";
-import Navbar from "./Navbar";
-import logo from "../assets/logo-1.png";
-
-import company1 from "../assets/8KNYTYheOg273ilY2UKT4I0i6tw.webp";
-import company2 from "../assets/Aaitwyz8Bn0iAMCL5QA3tLToEWU.webp";
-import company3 from "../assets/cTFmAlgaEelNJtugChUwoMcoTyg.webp";
-import company4 from "../assets/KMovuQPuiF4uT9tKe43HZgN1lms.webp";
-import company5 from "../assets/pxv9LzlddUxmQlc2MokcI9Oi3lc.webp";
-import company6 from "../assets/ZsrrIuPtKUuolA7ZfD4oupAz0.webp";
-import company7 from "../assets/Google-Logo-PNG-Images-HD.png";
-import company8 from "../assets/White-Amazon-Logo-PNG-HD-Quality.png"
->>>>>>>>> Temporary merge branch 2
+import React, { useState } from 'react';
+import { 
+  Sparkles, BookOpen, Users, Play, Award, 
+  Terminal, ChevronDown, ChevronUp, Home, Star,
+  CheckCircle2, Share2, Trophy
+} from 'lucide-react';
+import candidatesData from '../data/candidates.json';
+import curriculumData from '../data/curriculum.json';
+import Navbar from './Navbar';
 
 export default function LandingPage({ onStartInterview }) {
   const [activeTab, setActiveTab] = useState("home");
@@ -31,42 +16,6 @@ export default function LandingPage({ onStartInterview }) {
   const candidates = candidatesData.candidates || [];
   const modules = curriculumData.modules || [];
   const days = curriculumData.days || [];
-
-  // Authentic Company SVG Logos
-  const companyLogos = [
-    {
-      name: "Google",
-      logo: "https://cdn.simpleicons.org/google",
-    },
-    {
-      name: "Microsoft",
-      logo: "https://cdn.simpleicons.org/microsoft",
-    },
-    {
-      name: "Amazon",
-      logo: "https://cdn.simpleicons.org/amazon",
-    },
-    {
-      name: "Meta",
-      logo: "https://cdn.simpleicons.org/meta",
-    },
-    {
-      name: "GitHub",
-      logo: "https://cdn.simpleicons.org/github",
-    },
-    {
-      name: "OpenAI",
-      logo: "https://cdn.simpleicons.org/openai",
-    },
-    {
-      name: "NVIDIA",
-      logo: "https://cdn.simpleicons.org/nvidia",
-    },
-    {
-      name: "Netflix",
-      logo: "https://cdn.simpleicons.org/netflix",
-    },
-  ];
 
   const mentors = [
     {
@@ -84,10 +33,6 @@ export default function LandingPage({ onStartInterview }) {
       bio: "Expert in Dockerizing LLM Backends, Vector DB Optimizations (Pinecone/ChromaDB), and Agentic Memory Systems."
     }
   ];
-
-  // =====================================================
-  // REVIEWS
-  // =====================================================
 
   const reviews = [
     {
@@ -113,10 +58,6 @@ export default function LandingPage({ onStartInterview }) {
     }
   ];
 
-  // =====================================================
-  // FAQ
-  // =====================================================
-
   const faqs = [
     {
       q: "ABTalks AI Cohort Assessment & Placement Portal kaise kaam karta hai?",
@@ -140,20 +81,13 @@ export default function LandingPage({ onStartInterview }) {
         setActiveTab={setActiveTab}
       />
 
-      {/* Background Lighting Gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[500px] bg-indigo-600/15 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute top-[1200px] right-0 w-[600px] h-[400px] bg-purple-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-      {/* =====================================================
-          MAIN
-      ===================================================== */}
-
       <main className="max-w-7xl mx-auto px-6 pb-24 relative z-10">
 
-        {/* TAB 1: HOME PAGE HERO & SECTIONS */}
         {activeTab === 'home' && (
           <div>
-            {/* HERO SECTION */}
             <section className="pt-20 pb-16 text-center relative">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-6">
                 <Sparkles className="w-3.5 h-3.5 animate-pulse text-indigo-400" /> ABTalks AI Cohort 2026
@@ -188,98 +122,34 @@ export default function LandingPage({ onStartInterview }) {
               </div>
             </section>
 
-            {/* WHERE OUR GRADUATES WORK MARQUEE */}
             <section className="py-16 border-t border-slate-800/80 overflow-hidden">
               <div className="relative w-full overflow-hidden">
-                {/* Left Fade */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
-
-                {/* Right Fade */}
                 <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
 
-    {/* Moving Track */}
-    <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
+                <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
+                  <div className="flex items-center gap-12 md:gap-16 px-6">
+                    <span className="company-logo company-cadbury">Cadbury</span>
+                    <span className="company-logo company-canon">Canon</span>
+                    <span className="company-logo company-spark">Spark</span>
+                    <span className="company-logo company-amazon">amazon</span>
+                    <span className="company-logo company-facebook">facebook.</span>
+                    <span className="company-logo company-tinder">tinder.</span>
+                    <span className="company-logo company-airbnb">♡ airbnb</span>
+                  </div>
 
-      {/* FIRST ROW */}
-      <div className="flex items-center gap-12 md:gap-16 px-6">
+                  <div className="flex items-center gap-12 md:gap-16 px-6">
+                    <span className="company-logo company-cadbury">Cadbury</span>
+                    <span className="company-logo company-canon">Canon</span>
+                    <span className="company-logo company-spark">Spark</span>
+                    <span className="company-logo company-amazon">amazon</span>
+                    <span className="company-logo company-facebook">facebook.</span>
+                    <span className="company-logo company-tinder">tinder.</span>
+                    <span className="company-logo company-airbnb">♡ airbnb</span>
+                  </div>
+                </div>
+              </div>
 
-        {/* Cadbury */}
-        <span className="company-logo company-cadbury">
-          Cadbury
-        </span>
-
-        {/* Canon */}
-        <span className="company-logo company-canon">
-          Canon
-        </span>
-
-        {/* Spark */}
-        <span className="company-logo company-spark">
-          Spark
-        </span>
-
-        {/* Amazon */}
-        <span className="company-logo company-amazon">
-          amazon
-        </span>
-
-        {/* Facebook */}
-        <span className="company-logo company-facebook">
-          facebook.
-        </span>
-
-        {/* Tinder */}
-        <span className="company-logo company-tinder">
-          tinder.
-        </span>
-
-        {/* Airbnb */}
-        <span className="company-logo company-airbnb">
-          ♡ airbnb
-        </span>
-
-      </div>
-
-
-      {/* DUPLICATE ROW FOR INFINITE LOOP */}
-      <div className="flex items-center gap-12 md:gap-16 px-6">
-
-        <span className="company-logo company-cadbury">
-          Cadbury
-        </span>
-
-        <span className="company-logo company-canon">
-          Canon
-        </span>
-
-        <span className="company-logo company-spark">
-          Spark
-        </span>
-
-        <span className="company-logo company-amazon">
-          amazon
-        </span>
-
-        <span className="company-logo company-facebook">
-          facebook.
-        </span>
-
-        <span className="company-logo company-tinder">
-          tinder.
-        </span>
-
-        <span className="company-logo company-airbnb">
-          ♡ airbnb
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-              {/* Styling + Animation */}
               <style>{`
                 .company-logo {
                   display: inline-flex;
@@ -295,73 +165,19 @@ export default function LandingPage({ onStartInterview }) {
                   opacity: 1;
                   transform: scale(1.04);
                 }
-                .company-cadbury {
-                  font-family: cursive;
-                  font-size: 31px;
-                  font-weight: 600;
-                  font-style: italic;
-                  letter-spacing: -1.5px;
-                }
-                .company-canon {
-                  font-family: Georgia, "Times New Roman", serif;
-                  font-size: 30px;
-                  font-weight: 800;
-                  letter-spacing: -1px;
-                }
-                .company-spark {
-                  font-family: cursive;
-                  font-size: 32px;
-                  font-style: italic;
-                  font-weight: 600;
-                  letter-spacing: -1px;
-                }
-                .company-amazon {
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 30px;
-                  font-weight: 800;
-                  letter-spacing: -1.5px;
-                  position: relative;
-                }
-                .company-amazon::after {
-                  content: "";
-                  position: absolute;
-                  width: 38px;
-                  height: 8px;
-                  border-bottom: 3px solid #d8dbea;
-                  border-radius: 50%;
-                  bottom: -5px;
-                  right: 2px;
-                  transform: rotate(5deg);
-                }
-                .company-facebook {
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 28px;
-                  font-weight: 700;
-                  letter-spacing: -1.5px;
-                }
-                .company-tinder {
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 29px;
-                  font-weight: 700;
-                  letter-spacing: -1.5px;
-                }
-                .company-airbnb {
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 28px;
-                  font-weight: 600;
-                  letter-spacing: -1px;
-                }
-                @keyframes company-marquee {
-                  from { transform: translateX(0); }
-                  to { transform: translateX(-50%); }
-                }
-                .animate-company-marquee {
-                  animation: company-marquee 24s linear infinite;
-                }
+                .company-cadbury { font-family: cursive; font-size: 31px; font-weight: 600; font-style: italic; letter-spacing: -1.5px; }
+                .company-canon { font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: 800; letter-spacing: -1px; }
+                .company-spark { font-family: cursive; font-size: 32px; font-style: italic; font-weight: 600; letter-spacing: -1px; }
+                .company-amazon { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -1.5px; position: relative; }
+                .company-amazon::after { content: ""; position: absolute; width: 38px; height: 8px; border-bottom: 3px solid #d8dbea; border-radius: 50%; bottom: -5px; right: 2px; transform: rotate(5deg); }
+                .company-facebook { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -1.5px; }
+                .company-tinder { font-family: Arial, Helvetica, sans-serif; font-size: 29px; font-weight: 700; letter-spacing: -1.5px; }
+                .company-airbnb { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
+                @keyframes company-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+                .animate-company-marquee { animation: company-marquee 24s linear infinite; }
               `}</style>
             </section>
 
-            {/* MENTORS SECTION */}
             <section className="py-16 border-t border-slate-800/80">
               <div className="text-center mb-12">
                 <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">INSTRUCTORS & INDUSTRY EXPERTS</span>
@@ -383,7 +199,6 @@ export default function LandingPage({ onStartInterview }) {
               </div>
             </section>
 
-            {/* REVIEWS SECTION */}
             <section className="py-16 border-t border-slate-800/80">
               <div className="text-center mb-12">
                 <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">PLACEMENT STORIES</span>
@@ -416,15 +231,10 @@ export default function LandingPage({ onStartInterview }) {
               </div>
             </section>
 
-            {/* FAQ SECTION */}
             <section className="py-20 border-t border-slate-800/80 max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  GOT QUESTIONS?
-                </span>
-                <h2 className="text-3xl font-black text-white">
-                  Frequently Asked Questions
-                </h2>
+                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">GOT QUESTIONS?</span>
+                <h2 className="text-3xl font-black text-white">Frequently Asked Questions</h2>
               </div>
 
               <div className="space-y-4">
@@ -432,49 +242,22 @@ export default function LandingPage({ onStartInterview }) {
                   const isOpen = openFaq === idx;
 
                   return (
-                    <div
-                      key={idx}
-                      className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden"
-                    >
+                    <div key={idx} className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
                       <button
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
                         className="w-full p-5 text-left flex justify-between items-center text-sm font-bold text-white hover:bg-slate-800/30 cursor-pointer"
                       >
                         <span>{f.q}</span>
-                        {isOpen ? (
-                          <ChevronUp className="w-4 h-4 text-indigo-400" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-slate-500" />
-                        )}
+                        {isOpen ? <ChevronUp className="w-4 h-4 text-indigo-400" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
                       </button>
 
-                      {/* ANSWER ANIMATION */}
-                      <div
-                        className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                        }`}
-                      >
+                      <div className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                         <div className="overflow-hidden">
-                          <div
-                            className={`px-5 sm:px-6 pb-6 transition-all duration-700 ${
-                              isOpen ? "translate-y-0 scale-100" : "-translate-y-5 scale-95"
-                            }`}
-                          >
+                          <div className={`px-5 sm:px-6 pb-6 transition-all duration-700 ${isOpen ? "translate-y-0 scale-100" : "-translate-y-5 scale-95"}`}>
                             <div className="border-t border-purple-500/20 pt-5">
                               <div className="flex gap-4">
-                                {/* ANIMATED LINE */}
-                                <div
-                                  className={`w-1 shrink-0 rounded-full bg-gradient-to-b from-indigo-400 via-purple-500 to-pink-500 transition-all duration-700 ${
-                                    isOpen ? "h-auto opacity-100 scale-y-100" : "h-0 opacity-0 scale-y-0"
-                                  }`}
-                                />
-
-                                {/* ANSWER */}
-                                <p
-                                  className={`text-sm text-slate-400 leading-7 transition-all duration-700 delay-100 ${
-                                    isOpen ? "translate-x-0 opacity-100" : "translate-x-5 opacity-0"
-                                  }`}
-                                >
+                                <div className={`w-1 shrink-0 rounded-full bg-gradient-to-b from-indigo-400 via-purple-500 to-pink-500 transition-all duration-700 ${isOpen ? "h-auto opacity-100 scale-y-100" : "h-0 opacity-0 scale-y-0"}`} />
+                                <p className={`text-sm text-slate-400 leading-7 transition-all duration-700 delay-100 ${isOpen ? "translate-x-0 opacity-100" : "translate-x-5 opacity-0"}`}>
                                   {f.a}
                                 </p>
                               </div>
@@ -490,7 +273,6 @@ export default function LandingPage({ onStartInterview }) {
           </div>
         )}
 
-        {/* TAB 2: INTERVIEW CANDIDATE ROSTER GRID */}
         {activeTab === 'roster' && (
           <div className="mt-12">
             <div className="flex justify-between items-center mb-8 border-b border-slate-800/80 pb-4">
@@ -513,10 +295,7 @@ export default function LandingPage({ onStartInterview }) {
                 const completionPercentage = Math.round((passedMissions / missions.length) * 100);
 
                 return (
-                  <div
-                    key={member.id}
-                    className="group bg-slate-900/70 backdrop-blur-md border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1 flex flex-col justify-between"
-                  >
+                  <div key={member.id} className="group bg-slate-900/70 backdrop-blur-md border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-[11px] font-mono font-bold px-2.5 py-1 bg-slate-800 text-indigo-300 rounded-md border border-slate-700">
@@ -542,14 +321,10 @@ export default function LandingPage({ onStartInterview }) {
                         </div>
 
                         <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                          <div
-                            className="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full transition-all duration-500"
-                            style={{ width: `${completionPercentage}%` }}
-                          />
+                          <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full transition-all duration-500" style={{ width: `${completionPercentage}%` }} />
                         </div>
                       </div>
 
-                      {/* SIGNALS */}
                       <div className="grid grid-cols-2 gap-2 mt-4 text-[11px] font-mono text-slate-400">
                         <div className="bg-slate-950/60 p-2 rounded-lg border border-slate-800">
                           <span>Commit Days: </span>
@@ -576,7 +351,6 @@ export default function LandingPage({ onStartInterview }) {
           </div>
         )}
 
-        {/* TAB 3: CURRICULUM ACCORDION */}
         {activeTab === 'curriculum' && (
           <div className="mt-12 max-w-5xl mx-auto">
             <div className="text-center mb-10">
@@ -592,10 +366,7 @@ export default function LandingPage({ onStartInterview }) {
                 const moduleDays = days.filter(d => d.day >= mod.days[0] && d.day <= mod.days[1]);
 
                 return (
-                  <div
-                    key={mod.n}
-                    className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200"
-                  >
+                  <div key={mod.n} className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200">
                     <button
                       onClick={() => setOpenModule(isExpanded ? null : mod.n)}
                       className="w-full p-6 text-left flex items-center justify-between hover:bg-slate-800/40 transition cursor-pointer"
@@ -617,12 +388,7 @@ export default function LandingPage({ onStartInterview }) {
                         <span className="text-xs text-slate-500 font-mono hidden sm:inline-block">
                           {moduleDays.length} Lessons
                         </span>
-
-                        {isExpanded ? (
-                          <ChevronUp className="w-5 h-5 text-indigo-400" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-slate-500" />
-                        )}
+                        {isExpanded ? <ChevronUp className="w-5 h-5 text-indigo-400" /> : <ChevronDown className="w-5 h-5 text-slate-500" />}
                       </div>
                     </button>
 
@@ -670,10 +436,6 @@ export default function LandingPage({ onStartInterview }) {
         )}
       </main>
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
-
       <footer className="border-t border-slate-800/80 bg-slate-950 py-12 px-6 relative z-10 font-sans">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
@@ -693,38 +455,15 @@ export default function LandingPage({ onStartInterview }) {
             </div>
           </div>
 
-          {/* QUICK LINKS */}
           <div>
             <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">Quick Links</h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li>
-                <button 
-                  onClick={() => setActiveTab('home')} 
-                  className="hover:text-indigo-400 cursor-pointer"
-                >
-                  Cohort Overview
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setActiveTab('curriculum')} 
-                  className="hover:text-indigo-400 cursor-pointer"
-                >
-                  31-Day Syllabus
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setActiveTab('roster')} 
-                  className="hover:text-indigo-400 cursor-pointer"
-                >
-                  Candidate Roster
-                </button>
-              </li>
+              <li><button onClick={() => setActiveTab('home')} className="hover:text-indigo-400 cursor-pointer">Cohort Overview</button></li>
+              <li><button onClick={() => setActiveTab('curriculum')} className="hover:text-indigo-400 cursor-pointer">31-Day Syllabus</button></li>
+              <li><button onClick={() => setActiveTab('roster')} className="hover:text-indigo-400 cursor-pointer">Candidate Roster</button></li>
             </ul>
           </div>
 
-          {/* TECH STACK */}
           <div>
             <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">Core Tech Stack</h4>
             <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-indigo-300">
