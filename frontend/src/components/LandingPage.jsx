@@ -170,31 +170,6 @@ export default function LandingPage({ onStartInterview }) {
                     <img src={company6} alt="" sizes="" srcset="" />
                     <img className="h-20" src={company7} alt="" srcset="" />
                     <img className="h-13" src={company8} alt="" srcset="" />
-                    {/* <span className="company-logo company-cadbury">
-                      Cadbury
-                    </span> */}
-
-                    {/* Canon */}
-                    {/* <span className="company-logo company-canon">Canon</span> */}
-
-                    {/* Spark */}
-                    {/* <span className="company-logo company-spark">Spark</span> */}
-
-                    {/* Amazon */}
-                    {/* <span className="company-logo company-amazon">amazon</span> */}
-
-                    {/* Facebook */}
-                    {/* <span className="company-logo company-facebook">
-                      facebook.
-                    </span> */}
-
-                    {/* Tinder */}
-                    {/* <span className="company-logo company-tinder">tinder.</span> */}
-
-                    {/* Airbnb */}
-                    {/* <span className="company-logo company-airbnb">
-                      ♡ airbnb
-                    </span> */}
                   </div>
 
                   {/* DUPLICATE ROW FOR INFINITE LOOP */}
