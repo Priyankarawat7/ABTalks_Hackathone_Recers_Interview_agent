@@ -1,5 +1,5 @@
-import React from "react";
 import { Bot, ChevronDown, ArrowRight } from "lucide-react";
+import logo from '../assets/logo-1.png'
 
 export default function Navbar({ activeTab, setActiveTab }) {
   return (
@@ -12,13 +12,14 @@ export default function Navbar({ activeTab, setActiveTab }) {
           onClick={() => setActiveTab("home")}
           className="flex items-center gap-3 cursor-pointer"
         >
-          <div className="w-12 h-12 rounded-full border-2 border-purple-400 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.35)]">
+          {/* <div className="w-12 h-12 rounded-full border-2 border-purple-400 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.35)]">
             <Bot className="w-7 h-7 text-purple-300" />
           </div>
 
           <span className="text-2xl font-semibold tracking-tight text-white">
             ABTalks AI
-          </span>
+          </span> */}
+          <img className="h-11" src={logo} alt="" srcset="" />
         </button>
 
 
