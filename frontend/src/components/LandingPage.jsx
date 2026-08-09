@@ -715,67 +715,447 @@ export default function LandingPage({ onStartInterview }) {
             </section>
 
 
-            {/* =================================================
-                FAQ
-            ================================================= */}
+    
+{/* =====================================================
+    FAQ SECTION
+===================================================== */}
 
-            <section className="py-16 border-t border-slate-800/80 max-w-4xl mx-auto">
+<section className="py-20 border-t border-slate-800/80 max-w-4xl mx-auto">
 
-              <div className="text-center mb-12">
+  {/* ================= HEADING ================= */}
 
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  GOT QUESTIONS?
-                </span>
+  <div className="text-center mb-12">
 
-                <h2 className="text-3xl font-black text-white">
-                  Frequently Asked Questions
-                </h2>
+    {/* ANIMATED BADGE */}
+    <div className="inline-flex relative mb-5">
 
-              </div>
+      <div
+        className="
+          absolute
+          inset-0
+          rounded-full
+          bg-purple-500/20
+          blur-xl
+          animate-pulse
+        "
+      />
+
+      <span
+        className="
+          relative
+          inline-flex
+          items-center
+          px-6
+          py-2
+          rounded-full
+          text-xs
+          font-mono
+          font-bold
+          uppercase
+          tracking-[0.2em]
+          text-purple-300
+          border border-purple-500/30
+          bg-gradient-to-r
+          from-indigo-500/10
+          via-purple-500/10
+          to-pink-500/10
+        "
+      >
+        FAQs
+      </span>
+
+    </div>
 
 
-              <div className="space-y-4">
+    {/* HEADING */}
 
-                {faqs.map((f, idx) => (
+    <h2
+      className="
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        font-black
+        tracking-tight
+        text-white
+        leading-tight
+      "
+    >
+      Frequently Asked Questions
+      <br />
 
-                  <div
-                    key={idx}
-                    className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden"
-                  >
+      <span
+        className="
+          bg-gradient-to-r
+          from-indigo-400
+          via-purple-400
+          to-pink-400
+          bg-clip-text
+          text-transparent
+        "
+      >
+        From Our Students
+      </span>
+    </h2>
 
-                    <button
-                      onClick={() =>
-                        setOpenFaq(openFaq === idx ? null : idx)
-                      }
-                      className="w-full p-5 text-left flex justify-between items-center text-sm font-bold text-white hover:bg-slate-800/30 cursor-pointer"
+
+    <p className="text-slate-500 text-sm mt-4 max-w-xl mx-auto">
+      Everything you need to know about the ABTalks AI Cohort.
+    </p>
+
+  </div>
+
+
+  {/* ================= FAQ LIST ================= */}
+
+  <div className="space-y-4">
+
+    {faqs.map((f, idx) => {
+
+      const isOpen = openFaq === idx;
+
+      return (
+
+        <div
+          key={idx}
+          className={`
+            group
+            relative
+            rounded-2xl
+            border
+            overflow-hidden
+
+            transition-all
+            duration-500
+            ease-out
+
+            ${
+              isOpen
+                ? `
+                  border-purple-500/50
+                  bg-gradient-to-br
+                  from-indigo-950/70
+                  via-purple-950/50
+                  to-pink-950/30
+                  -translate-y-1
+                  shadow-[0_15px_50px_rgba(139,92,246,0.20)]
+                `
+                : `
+                  border-slate-800
+                  bg-slate-950/70
+                  hover:border-purple-500/40
+                  hover:-translate-y-1
+                  hover:shadow-[0_10px_35px_rgba(139,92,246,0.12)]
+                `
+            }
+          `}
+        >
+
+          {/* ================= GLOW ================= */}
+
+          <div
+            className={`
+              absolute
+              -top-20
+              -right-20
+              w-40
+              h-40
+              rounded-full
+              bg-purple-500/20
+              blur-3xl
+              pointer-events-none
+
+              transition-all
+              duration-700
+
+              ${
+                isOpen
+                  ? "opacity-100 scale-150"
+                  : "opacity-0 scale-75"
+              }
+            `}
+          />
+
+
+          {/* ================= QUESTION BUTTON ================= */}
+
+          <button
+            onClick={() =>
+              setOpenFaq(isOpen ? null : idx)
+            }
+            className="
+              relative
+              z-10
+              w-full
+              px-5
+              sm:px-6
+              py-5
+              sm:py-6
+              flex
+              items-center
+              justify-between
+              gap-4
+              text-left
+              cursor-pointer
+            "
+          >
+
+            {/* NUMBER + QUESTION */}
+
+            <div className="flex items-center gap-4 min-w-0">
+
+              {/* NUMBER */}
+
+              <span
+                className={`
+                  hidden
+                  sm:flex
+                  w-9
+                  h-9
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-lg
+                  text-xs
+                  font-mono
+                  font-bold
+
+                  transition-all
+                  duration-500
+
+                  ${
+                    isOpen
+                      ? `
+                        bg-gradient-to-br
+                        from-indigo-500/30
+                        via-purple-500/30
+                        to-pink-500/30
+                        text-purple-200
+                        border
+                        border-purple-400/40
+                        scale-110
+                        shadow-[0_0_20px_rgba(139,92,246,0.30)]
+                      `
+                      : `
+                        bg-slate-900
+                        text-slate-500
+                        border
+                        border-slate-800
+                        group-hover:text-purple-300
+                        group-hover:border-purple-500/30
+                      `
+                  }
+                `}
+              >
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+
+
+              {/* QUESTION */}
+
+              <span
+                className={`
+                  text-sm
+                  sm:text-base
+                  font-semibold
+                  transition-all
+                  duration-500
+
+                  ${
+                    isOpen
+                      ? `
+                        translate-x-1
+                        bg-gradient-to-r
+                        from-indigo-300
+                        via-purple-300
+                        to-pink-300
+                        bg-clip-text
+                        text-transparent
+                      `
+                      : `
+                        text-slate-300
+                        group-hover:text-white
+                        group-hover:translate-x-1
+                      `
+                  }
+                `}
+              >
+                {f.q}
+              </span>
+
+            </div>
+
+
+            {/* ================= ARROW ================= */}
+
+            <div
+              className={`
+                relative
+                w-9
+                h-9
+                shrink-0
+                rounded-full
+                border
+                flex
+                items-center
+                justify-center
+
+                transition-all
+                duration-500
+
+                ${
+                  isOpen
+                    ? `
+                      rotate-180
+                      scale-110
+                      border-purple-400/50
+                      bg-purple-500/15
+                      shadow-[0_0_20px_rgba(139,92,246,0.25)]
+                    `
+                    : `
+                      border-slate-700
+                      bg-slate-900
+                      group-hover:border-purple-500/40
+                      group-hover:scale-105
+                    `
+                }
+              `}
+            >
+
+              {isOpen ? (
+
+                <ChevronUp
+                  className="
+                    w-4
+                    h-4
+                    text-purple-400
+                  "
+                />
+
+              ) : (
+
+                <ChevronDown
+                  className="
+                    w-4
+                    h-4
+                    text-slate-400
+                    group-hover:text-purple-300
+                  "
+                />
+
+              )}
+
+            </div>
+
+          </button>
+
+
+          {/* =================================================
+              ANSWER ANIMATION
+          ================================================= */}
+
+          <div
+            className={`
+              grid
+              transition-all
+              duration-700
+              ease-[cubic-bezier(0.16,1,0.3,1)]
+
+              ${
+                isOpen
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
+              }
+            `}
+          >
+
+            <div className="overflow-hidden">
+
+              <div
+                className={`
+                  px-5
+                  sm:px-6
+                  pb-6
+
+                  transition-all
+                  duration-700
+
+                  ${
+                    isOpen
+                      ? "translate-y-0 scale-100"
+                      : "-translate-y-5 scale-95"
+                  }
+                `}
+              >
+
+                <div className="border-t border-purple-500/20 pt-5">
+
+                  <div className="flex gap-4">
+
+                    {/* ================= ANIMATED LINE ================= */}
+
+                    <div
+                      className={`
+                        w-1
+                        shrink-0
+                        rounded-full
+                        bg-gradient-to-b
+                        from-indigo-400
+                        via-purple-500
+                        to-pink-500
+
+                        transition-all
+                        duration-700
+
+                        ${
+                          isOpen
+                            ? "h-auto opacity-100 scale-y-100"
+                            : "h-0 opacity-0 scale-y-0"
+                        }
+                      `}
+                    />
+
+
+                    {/* ================= ANSWER ================= */}
+
+                    <p
+                      className={`
+                        text-sm
+                        text-slate-400
+                        leading-7
+
+                        transition-all
+                        duration-700
+                        delay-100
+
+                        ${
+                          isOpen
+                            ? "translate-x-0 opacity-100"
+                            : "translate-x-5 opacity-0"
+                        }
+                      `}
                     >
-
-                      <span>{f.q}</span>
-
-                      {openFaq === idx ? (
-                        <ChevronUp className="w-4 h-4 text-indigo-400" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4 text-slate-500" />
-                      )}
-
-                    </button>
-
-
-                    {openFaq === idx && (
-
-                      <div className="px-5 pb-5 pt-1 text-xs text-slate-400 border-t border-slate-800/60 leading-relaxed">
-                        {f.a}
-                      </div>
-
-                    )}
+                      {f.a}
+                    </p>
 
                   </div>
 
-                ))}
+                </div>
 
               </div>
 
-            </section>
+            </div>
+
+          </div>
+
+        </div>
+
+      );
+
+    })}
+
+  </div>
+
+</section>
 
           </div>
         )}
