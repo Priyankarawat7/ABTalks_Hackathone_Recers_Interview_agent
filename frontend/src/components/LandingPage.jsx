@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { 
   Sparkles, BookOpen, Users, Play, Award, 
   Terminal, ChevronDown, ChevronUp, Home, Star,
-  CheckCircle2, Share2, Trophy
+  CheckCircle2, Share2, Trophy,  Rocket,Lightbulb,Cpu,
+ Handshake
 } from 'lucide-react';
 import candidatesData from '../data/candidates.json';
 import curriculumData from '../data/curriculum.json';
+
 import Navbar from './Navbar';
+
 
 import company1 from "../assets/8KNYTYheOg273ilY2UKT4I0i6tw.webp";
 import company2 from "../assets/Aaitwyz8Bn0iAMCL5QA3tLToEWU.webp";
@@ -19,10 +22,12 @@ import company8 from "../assets/White-Amazon-Logo-PNG-HD-Quality.png";
 import Footer from './Footer';
 
 
+
 export default function LandingPage({ onStartInterview }) {
   const [activeTab, setActiveTab] = useState('home');
   const [openModule, setOpenModule] = useState(1);
   const [openFaq, setOpenFaq] = useState(0);
+  const [activeTechTab, setActiveTechTab] = useState('Frontend');
 
   const candidates = candidatesData.candidates || [];
   const modules = curriculumData.modules || [];
@@ -400,6 +405,1619 @@ export default function LandingPage({ onStartInterview }) {
               </div>
 
             </section>
+
+
+                {/* =================================================
+    TECHNOLOGIES
+================================================= */}
+
+<section className="relative py-20 border-t border-slate-800/80 overflow-hidden">
+
+  {/* BACKGROUND GLOW - LEFT */}
+  <div className="
+    absolute
+    -left-40
+    top-20
+    w-[450px]
+    h-[450px]
+    bg-indigo-500/10
+    blur-[150px]
+    rounded-full
+    pointer-events-none
+  " />
+
+  {/* BACKGROUND GLOW - RIGHT */}
+  <div className="
+    absolute
+    -right-40
+    top-60
+    w-[450px]
+    h-[450px]
+    bg-purple-500/10
+    blur-[150px]
+    rounded-full
+    pointer-events-none
+  " />
+
+  {/* BACKGROUND GLOW - CENTER */}
+  <div className="
+    absolute
+    left-1/2
+    -translate-x-1/2
+    top-40
+    w-[500px]
+    h-[300px]
+    bg-pink-500/5
+    blur-[130px]
+    rounded-full
+    pointer-events-none
+  " />
+
+  <div className="relative z-10">
+
+    {/* ================= HEADER ================= */}
+
+    <div className="text-center mb-12">
+
+      <div className="inline-flex items-center justify-center mb-7">
+
+        <span
+          className="
+            px-8
+            py-2
+            rounded-full
+            bg-gradient-to-r
+            from-indigo-500/30
+            via-purple-500/20
+            to-pink-500/30
+            border
+            border-purple-400/30
+            text-white
+            text-sm
+            sm:text-base
+            font-medium
+            shadow-[0_0_30px_rgba(139,92,246,0.15)]
+          "
+        >
+          TECHNOLOGIES
+        </span>
+
+      </div>
+
+      <h2 className="
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        font-black
+        text-white
+        tracking-tight
+      ">
+        Industry Tools You'll Master
+      </h2>
+
+      <p className="
+        text-slate-400
+        text-sm
+        sm:text-base
+        mt-4
+        max-w-2xl
+        mx-auto
+      ">
+        Master the modern tools and technologies used to build
+        production-ready AI applications.
+      </p>
+
+    </div>
+
+
+    {/* ================= CATEGORY TABS ================= */}
+
+    <div className="
+      flex
+      flex-wrap
+      justify-center
+      gap-3
+      mb-8
+    ">
+
+      {[
+        'Frontend',
+        'Backend',
+        'AI Engineering',
+        'Infrastructure',
+        'Engineering Skills',
+      ].map((tab) => (
+
+        <button
+          key={tab}
+          onClick={() => setActiveTechTab(tab)}
+          className={`
+            px-6
+            py-3
+            rounded-xl
+            text-sm
+            font-semibold
+            border
+            transition-all
+            duration-300
+            cursor-pointer
+
+            ${
+              activeTechTab === tab
+                ? `
+                  bg-gradient-to-r
+                  from-indigo-500
+                  via-purple-500
+                  to-pink-500
+                  text-white
+                  border-purple-400/50
+                  shadow-lg
+                  shadow-purple-500/25
+                  scale-[1.02]
+                `
+                : `
+                  bg-slate-950/80
+                  text-slate-300
+                  border-slate-700
+                  hover:border-purple-500/40
+                  hover:bg-slate-900
+                  hover:text-white
+                `
+            }
+          `}
+        >
+          {tab}
+        </button>
+
+      ))}
+
+    </div>
+
+
+    {/* ================= TOOLS CONTAINER ================= */}
+
+    <div className="
+      max-w-6xl
+      mx-auto
+      rounded-2xl
+      border
+      border-indigo-500/30
+      bg-black/60
+      backdrop-blur-sm
+      p-5
+      sm:p-8
+      relative
+      overflow-hidden
+      shadow-[0_0_60px_rgba(99,102,241,0.08)]
+    ">
+
+      {/* INNER GLOW */}
+
+      <div className="
+        absolute
+        inset-0
+        bg-gradient-to-br
+        from-indigo-500/[0.05]
+        via-purple-500/[0.03]
+        to-pink-500/[0.05]
+        pointer-events-none
+      " />
+
+
+      <h3 className="
+        relative
+        z-10
+        text-center
+        text-xl
+        sm:text-2xl
+        font-bold
+        text-white
+        mb-8
+      ">
+        TOOLS AND TECHNOLOGIES
+      </h3>
+
+
+      {/* ================= FRONTEND ================= */}
+
+      {activeTechTab === 'Frontend' && (
+
+        <div className="
+          relative
+          z-10
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          {/* REACT */}
+
+          <div className="
+            group
+            h-[265px]
+            rounded-xl
+            border
+            border-slate-700
+            bg-black/70
+            flex
+            flex-col
+            items-center
+            justify-center
+            transition-all
+            duration-300
+            hover:border-cyan-400/50
+            hover:-translate-y-1
+            hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]
+          ">
+
+            <div className="
+              h-32
+              flex
+              items-center
+              justify-center
+            ">
+
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React"
+                className="
+                  w-24
+                  h-24
+                  object-contain
+                  drop-shadow-[0_0_25px_rgba(34,211,238,0.55)]
+                  group-hover:scale-110
+                  transition-transform
+                  duration-300
+                "
+              />
+
+            </div>
+
+            <h4 className="
+              mt-5
+              text-base
+              font-semibold
+              text-white
+            ">
+              React
+            </h4>
+
+          </div>
+
+
+          {/* NEXT JS */}
+
+          <div className="
+            group
+            h-[265px]
+            rounded-xl
+            border
+            border-slate-700
+            bg-black/70
+            flex
+            flex-col
+            items-center
+            justify-center
+            transition-all
+            duration-300
+            hover:border-purple-400/50
+            hover:-translate-y-1
+            hover:shadow-[0_0_35px_rgba(168,85,247,0.15)]
+          ">
+
+            <div className="
+              h-32
+              flex
+              items-center
+              justify-center
+            ">
+
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="Next.js"
+                className="
+                  w-24
+                  h-24
+                  object-contain
+                  invert
+                  drop-shadow-[0_0_20px_rgba(168,85,247,0.35)]
+                  group-hover:scale-110
+                  transition-transform
+                  duration-300
+                "
+              />
+
+            </div>
+
+            <h4 className="
+              mt-5
+              text-base
+              font-semibold
+              text-white
+            ">
+              Next.js
+            </h4>
+
+          </div>
+
+
+          {/* TYPESCRIPT */}
+
+          <div className="
+            group
+            h-[265px]
+            rounded-xl
+            border
+            border-slate-700
+            bg-black/70
+            flex
+            flex-col
+            items-center
+            justify-center
+            transition-all
+            duration-300
+            hover:border-indigo-400/50
+            hover:-translate-y-1
+            hover:shadow-[0_0_35px_rgba(99,102,241,0.15)]
+          ">
+
+            <div className="
+              h-32
+              flex
+              items-center
+              justify-center
+            ">
+
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
+                className="
+                  w-24
+                  h-24
+                  object-contain
+                  drop-shadow-[0_0_25px_rgba(99,102,241,0.5)]
+                  group-hover:scale-110
+                  transition-transform
+                  duration-300
+                "
+              />
+
+            </div>
+
+            <h4 className="
+              mt-5
+              text-base
+              font-semibold
+              text-white
+            ">
+              TypeScript
+            </h4>
+
+          </div>
+
+
+          {/* TAILWIND */}
+
+          <div className="
+            group
+            h-[265px]
+            rounded-xl
+            border
+            border-slate-700
+            bg-black/70
+            flex
+            flex-col
+            items-center
+            justify-center
+            transition-all
+            duration-300
+            hover:border-pink-400/50
+            hover:-translate-y-1
+            hover:shadow-[0_0_35px_rgba(236,72,153,0.12)]
+          ">
+
+            <div className="
+              h-32
+              flex
+              items-center
+              justify-center
+            ">
+
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="Tailwind CSS"
+                className="
+                  w-24
+                  h-24
+                  object-contain
+                  drop-shadow-[0_0_25px_rgba(236,72,153,0.45)]
+                  group-hover:scale-110
+                  transition-transform
+                  duration-300
+                "
+              />
+
+            </div>
+
+            <h4 className="
+              mt-5
+              text-base
+              font-semibold
+              text-white
+            ">
+              Tailwind CSS
+            </h4>
+
+          </div>
+
+        </div>
+
+      )}
+
+
+      {/* ================= BACKEND ================= */}
+
+      {activeTechTab === 'Backend' && (
+
+        <div className="
+          relative
+          z-10
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          <TechCard
+            name="Node.js"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          />
+
+          <TechCard
+            name="Express.js"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            darkIcon
+          />
+
+          <TechCard
+            name="Python"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          />
+
+          <TechCard
+            name="FastAPI"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+          />
+
+        </div>
+
+      )}
+
+
+      {/* ================= AI ENGINEERING ================= */}
+
+      {activeTechTab === 'AI Engineering' && (
+
+        <div className="
+          relative
+          z-10
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          <TechCard
+            name="LangChain"
+            icon="https://cdn.simpleicons.org/langchain/ffffff"
+          />
+
+          <TechCard
+            name="LangGraph"
+            icon="https://cdn.simpleicons.org/langgraph/ffffff"
+          />
+
+          <TechCard
+            name="OpenAI"
+            icon="https://cdn.simpleicons.org/openai/ffffff"
+          />
+
+          <TechCard
+            name="Pinecone"
+            icon="https://cdn.simpleicons.org/pinecone/ffffff"
+          />
+
+        </div>
+
+      )}
+
+
+      {/* ================= INFRASTRUCTURE ================= */}
+
+      {activeTechTab === 'Infrastructure' && (
+
+        <div className="
+          relative
+          z-10
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          <TechCard
+            name="Docker"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+          />
+
+          <TechCard
+            name="Kubernetes"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+          />
+
+          <TechCard
+            name="AWS"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+          />
+
+          <TechCard
+            name="GitHub"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            darkIcon
+          />
+
+        </div>
+
+      )}
+
+
+      {/* ================= ENGINEERING SKILLS ================= */}
+
+      {activeTechTab === 'Engineering Skills' && (
+
+        <div className="
+          relative
+          z-10
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          <TechCard
+            name="System Design"
+            icon="https://cdn.simpleicons.org/diagramsdotnet/ffffff"
+          />
+
+          <TechCard
+            name="API Design"
+            icon="https://cdn.simpleicons.org/swagger/ffffff"
+          />
+
+          <TechCard
+            name="Git & GitHub"
+            icon="https://cdn.simpleicons.org/git/ffffff"
+          />
+
+          <TechCard
+            name="Testing"
+            icon="https://cdn.simpleicons.org/jest/ffffff"
+          />
+
+        </div>
+
+      )}
+
+    </div>
+
+
+    {/* ================= BOTTOM BUTTONS ================= */}
+
+    <div className="
+      flex
+      flex-wrap
+      justify-center
+      gap-3
+      mt-6
+    ">
+
+      <button
+        onClick={() => setActiveTab('curriculum')}
+        className="
+          px-5
+          py-3
+          rounded-lg
+          border
+          border-slate-700
+          bg-slate-900
+          text-white
+          text-sm
+          font-semibold
+          hover:border-indigo-500/50
+          hover:bg-slate-800
+          transition
+          cursor-pointer
+        "
+      >
+        Courses
+      </button>
+
+
+      <button
+        className="
+          px-5
+          py-3
+          rounded-lg
+          border
+          border-slate-700
+          bg-slate-900
+          text-white
+          text-sm
+          font-semibold
+          hover:border-purple-500/50
+          hover:bg-slate-800
+          transition
+          cursor-pointer
+        "
+      >
+        Request Callback
+      </button>
+
+
+      <button
+        onClick={() => setActiveTab('roster')}
+        className="
+          px-6
+          py-3
+          rounded-lg
+          bg-gradient-to-r
+          from-indigo-500
+          via-purple-500
+          to-pink-500
+          text-white
+          text-sm
+          font-bold
+          hover:from-indigo-400
+          hover:via-purple-400
+          hover:to-pink-400
+          transition
+          shadow-lg
+          shadow-purple-500/25
+          cursor-pointer
+        "
+      >
+        Buy Now →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* =================================================
+    CURRICULUM PREVIEW
+================================================= */}
+
+<section className="py-20 border-t border-slate-800/80 relative overflow-hidden">
+
+  {/* BACKGROUND GLOWS */}
+  <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-indigo-600/10 blur-[140px] rounded-full pointer-events-none" />
+  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 blur-[140px] rounded-full pointer-events-none" />
+
+  {/* HEADER */}
+  <div className="text-center mb-12 relative z-10">
+
+    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full
+      bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20
+      border border-purple-400/30
+      text-purple-300 text-xs font-bold uppercase tracking-[0.2em]
+      shadow-[0_0_30px_rgba(139,92,246,0.12)] mb-5"
+    >
+      <BookOpen className="w-4 h-4" />
+      Curriculum
+    </div>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+      Structured Curriculum Designed For
+      <br />
+      <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        Real Growth
+      </span>
+    </h2>
+
+    <p className="text-slate-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+      A structured 31-day learning journey designed to take you
+      from AI fundamentals to production-ready engineering.
+    </p>
+
+  </div>
+
+
+  {/* MAIN CURRICULUM CONTAINER */}
+  <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 relative z-10">
+
+
+    {/* =========================================
+        LEFT — PREREQUISITES
+    ========================================= */}
+
+    <div className="
+      bg-gradient-to-br from-slate-950 via-slate-900 to-black
+      border border-slate-800
+      rounded-2xl
+      p-6
+      h-fit
+      shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+    ">
+
+      <div className="w-10 h-10 rounded-xl
+        bg-indigo-500/10
+        border border-indigo-500/20
+        flex items-center justify-center mb-5"
+      >
+        <Terminal className="w-5 h-5 text-indigo-400" />
+      </div>
+
+      <h3 className="text-xl font-bold text-white">
+        Course Prerequisites
+      </h3>
+
+      <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+        Basic programming understanding is recommended.
+        Beginners are welcome and ready to learn fast,
+        stay consistent, and take responsibility for their progress.
+      </p>
+
+
+      {/* LEVEL + DURATION */}
+
+      <div className="flex items-center gap-4 mt-6">
+
+        <div className="flex items-center gap-2">
+          <span className="text-indigo-400">↗</span>
+
+          <span className="text-xs font-semibold text-slate-200">
+            Beginner To Advance
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1.5">
+          <span className="text-purple-400">◷</span>
+
+          <span className="text-xs font-semibold text-slate-200">
+            31 Days
+          </span>
+        </div>
+
+      </div>
+
+
+      {/* QUICK OVERVIEW */}
+
+      <div className="mt-8">
+
+        <p className="text-[10px] text-slate-500 uppercase tracking-[0.15em] mb-4">
+          A Quick Overview Of The Course
+        </p>
+
+        <div className="space-y-3">
+
+          {[
+            "Industry Ready Curriculum",
+            "Hands-on AI Engineering Training",
+            "Access to AI Interview Assessment",
+            "Real-World Projects",
+          ].map((item, index) => (
+
+            <div
+              key={index}
+              className="flex items-center gap-2.5"
+            >
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
+
+              <span className="text-xs text-slate-300">
+                {item}
+              </span>
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* BUTTON */}
+
+      <button
+        onClick={() => setActiveTab("curriculum")}
+        className="
+          w-full
+          mt-7
+          py-3
+          px-4
+          rounded-xl
+          bg-gradient-to-r
+          from-indigo-600
+          via-purple-600
+          to-pink-600
+          hover:from-indigo-500
+          hover:via-purple-500
+          hover:to-pink-500
+          text-white
+          text-xs
+          font-bold
+          transition
+          shadow-lg
+          shadow-purple-500/20
+          cursor-pointer
+        "
+      >
+        View Full Syllabus →
+      </button>
+
+    </div>
+
+
+    {/* =========================================
+        RIGHT — MODULES
+    ========================================= */}
+
+    <div className="space-y-3">
+
+      {modules.slice(0, 5).map((mod) => {
+
+        const isExpanded = openModule === mod.n;
+
+        const moduleDays = days.filter(
+          (d) =>
+            d.day >= mod.days[0] &&
+            d.day <= mod.days[1]
+        );
+
+        return (
+
+          <div
+            key={mod.n}
+            className={`
+              rounded-xl
+              border
+              overflow-hidden
+              transition-all
+              duration-300
+
+              ${
+                isExpanded
+                  ? "border-indigo-500/40 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-slate-950"
+                  : "border-slate-800 bg-slate-900/70 hover:border-purple-500/30"
+              }
+            `}
+          >
+
+            {/* MODULE HEADER */}
+
+            <button
+              onClick={() =>
+                setOpenModule(isExpanded ? null : mod.n)
+              }
+              className="
+                w-full
+                px-5
+                py-4
+                flex
+                items-center
+                justify-between
+                text-left
+                cursor-pointer
+                hover:bg-slate-800/30
+                transition
+              "
+            >
+
+              <div className="flex items-center gap-4 min-w-0">
+
+                {/* MODULE NUMBER */}
+
+                <div className="
+                  w-10
+                  h-10
+                  shrink-0
+                  rounded-lg
+                  bg-indigo-500/10
+                  border border-indigo-500/20
+                  flex
+                  items-center
+                  justify-center
+                  text-[10px]
+                  font-mono
+                  font-bold
+                  text-indigo-400
+                ">
+                  MODULE {mod.n}
+                </div>
+
+
+                <div className="min-w-0">
+
+                  <span className="
+                    text-[9px]
+                    font-mono
+                    text-purple-400
+                    uppercase
+                    tracking-wider
+                  ">
+                    Days {mod.days[0]} - {mod.days[1]}
+                  </span>
+
+                  <h3 className="
+                    text-sm
+                    sm:text-base
+                    font-semibold
+                    text-white
+                    mt-0.5
+                    truncate
+                  ">
+                    {mod.title}
+                  </h3>
+
+                  <p className="text-[10px] text-slate-500 mt-1">
+                    {moduleDays.length} lessons • Hands-on learning
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* ARROW */}
+
+              <div className={`
+                w-8
+                h-8
+                shrink-0
+                rounded-full
+                border
+                flex
+                items-center
+                justify-center
+                transition-all
+                duration-300
+
+                ${
+                  isExpanded
+                    ? "border-purple-400/40 bg-purple-500/10"
+                    : "border-slate-700 bg-slate-950"
+                }
+              `}>
+
+                {isExpanded ? (
+                  <ChevronUp className="w-4 h-4 text-purple-400" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-slate-400" />
+                )}
+
+              </div>
+
+            </button>
+
+
+            {/* MODULE CONTENT */}
+
+            {isExpanded && (
+
+              <div className="
+                px-5
+                pb-5
+                border-t
+                border-slate-800/70
+                bg-black/20
+              ">
+
+                <div className="pt-4 space-y-3">
+
+                  {moduleDays.slice(0, 2).map((day) => (
+
+                    <div
+                      key={day.day}
+                      className="
+                        rounded-lg
+                        border
+                        border-slate-800
+                        bg-slate-950/60
+                        p-4
+                      "
+                    >
+
+                      <div className="flex items-center justify-between gap-3">
+
+                        <div className="flex items-center gap-3">
+
+                          <span className="
+                            px-2
+                            py-1
+                            rounded-md
+                            bg-indigo-500/10
+                            border border-indigo-500/20
+                            text-[10px]
+                            text-indigo-400
+                            font-mono
+                            font-bold
+                          ">
+                            DAY {day.day}
+                          </span>
+
+                          <h4 className="text-xs font-semibold text-slate-200">
+                            {day.title}
+                          </h4>
+
+                        </div>
+
+                        <span className="
+                          hidden sm:block
+                          text-[9px]
+                          text-slate-500
+                          font-mono
+                        ">
+                          {day.type}
+                        </span>
+
+                      </div>
+
+
+                      {/* TOOLS */}
+
+                      <div className="flex flex-wrap gap-1.5 mt-3">
+
+                        {day.tools?.slice(0, 4).map((tool, i) => (
+
+                          <span
+                            key={i}
+                            className="
+                              text-[9px]
+                              px-2
+                              py-1
+                              rounded-md
+                              bg-indigo-500/5
+                              border border-slate-800
+                              text-slate-400
+                              font-mono
+                            "
+                          >
+                            {tool}
+                          </span>
+
+                        ))}
+
+                      </div>
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+            )}
+
+          </div>
+
+        );
+
+      })}
+
+    </div>
+
+  </div>
+
+
+  {/* MORE MODULES BUTTON */}
+
+  {modules.length > 5 && (
+
+    <div className="flex justify-center mt-7 relative z-10">
+
+      <button
+        onClick={() => setActiveTab("curriculum")}
+        className="
+          px-6
+          py-3
+          rounded-xl
+          bg-slate-900
+          border border-slate-700
+          hover:border-indigo-500/40
+          hover:bg-slate-800
+          text-slate-300
+          hover:text-white
+          text-xs
+          font-semibold
+          transition
+          shadow-lg
+          cursor-pointer
+        "
+      >
+        {modules.length - 5} More Modules →
+      </button>
+
+    </div>
+
+  )}
+
+</section>
+
+
+
+{/* =================================================
+    NOT JUST JOBS — BUILDERS SECTION
+================================================= */}
+
+<section className="py-20 border-t border-slate-800/80 relative overflow-hidden">
+
+  {/* BACKGROUND GLOWS */}
+
+  <div className="
+    absolute
+    top-10
+    left-1/4
+    w-[350px]
+    h-[250px]
+    bg-indigo-600/10
+    blur-[130px]
+    rounded-full
+    pointer-events-none
+  " />
+
+  <div className="
+    absolute
+    bottom-0
+    right-1/4
+    w-[350px]
+    h-[250px]
+    bg-purple-600/10
+    blur-[130px]
+    rounded-full
+    pointer-events-none
+  " />
+
+
+  {/* HEADER */}
+
+  <div className="relative z-10 text-center mb-10">
+
+    <div className="
+      inline-flex
+      items-center
+      justify-center
+      px-8
+      py-2
+      rounded-full
+      bg-gradient-to-r
+      from-indigo-500/20
+      via-purple-500/20
+      to-pink-500/20
+      border
+      border-purple-400/30
+      shadow-[0_0_30px_rgba(139,92,246,0.12)]
+      mb-6
+    ">
+
+      <span className="
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-purple-300
+        tracking-wide
+      ">
+        NOT JUST JOBS
+      </span>
+
+    </div>
+
+
+    <h2 className="
+      text-3xl
+      sm:text-4xl
+      md:text-5xl
+      font-black
+      text-white
+      tracking-tight
+    ">
+      We Also Support{" "}
+
+      <span className="
+        bg-gradient-to-r
+        from-indigo-400
+        via-purple-400
+        to-pink-400
+        bg-clip-text
+        text-transparent
+      ">
+        Builders.
+      </span>
+
+    </h2>
+
+    <p className="
+      text-slate-400
+      text-sm
+      sm:text-base
+      mt-4
+      max-w-2xl
+      mx-auto
+    ">
+      Go beyond getting hired. Learn how to turn your technical
+      skills into products, startups and real-world opportunities.
+    </p>
+
+  </div>
+
+
+  {/* BUILDER CARDS */}
+
+  <div className="
+    relative
+    z-10
+    max-w-5xl
+    mx-auto
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-4
+    gap-4
+  ">
+
+
+    {/* CARD 1 */}
+
+    <div className="
+      group
+      relative
+      h-[150px]
+      rounded-xl
+      border
+      border-slate-700
+      bg-slate-950/80
+      overflow-hidden
+      flex
+      flex-col
+      items-center
+      justify-center
+      text-center
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:border-indigo-400/50
+      hover:shadow-[0_15px_40px_rgba(99,102,241,0.15)]
+    ">
+
+      {/* CARD GLOW */}
+
+      <div className="
+        absolute
+        inset-0
+        bg-gradient-to-br
+        from-indigo-500/[0.08]
+        via-transparent
+        to-purple-500/[0.04]
+        opacity-0
+        group-hover:opacity-100
+        transition
+      " />
+
+
+      {/* ICON */}
+
+      <div className="
+        relative
+        z-10
+        w-11
+        h-11
+        rounded-xl
+        bg-indigo-500/10
+        border
+        border-indigo-400/20
+        flex
+        items-center
+        justify-center
+        mb-4
+        group-hover:scale-110
+        group-hover:bg-indigo-500/15
+        transition-all
+        duration-300
+      ">
+
+        <Rocket className="
+          w-6
+          h-6
+          text-indigo-400
+          group-hover:text-purple-400
+          transition
+        " />
+
+      </div>
+
+
+      <h3 className="
+        relative
+        z-10
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-slate-200
+        leading-tight
+      ">
+        How To Build
+        <br />
+        Startups
+      </h3>
+
+    </div>
+
+
+
+    {/* CARD 2 */}
+
+    <div className="
+      group
+      relative
+      h-[150px]
+      rounded-xl
+      border
+      border-slate-700
+      bg-slate-950/80
+      overflow-hidden
+      flex
+      flex-col
+      items-center
+      justify-center
+      text-center
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:border-purple-400/50
+      hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)]
+    ">
+
+      <div className="
+        absolute
+        inset-0
+        bg-gradient-to-br
+        from-purple-500/[0.08]
+        via-transparent
+        to-pink-500/[0.04]
+        opacity-0
+        group-hover:opacity-100
+        transition
+      " />
+
+
+      <div className="
+        relative
+        z-10
+        w-11
+        h-11
+        rounded-xl
+        bg-purple-500/10
+        border
+        border-purple-400/20
+        flex
+        items-center
+        justify-center
+        mb-4
+        group-hover:scale-110
+        transition-all
+        duration-300
+      ">
+
+        <Lightbulb className="
+          w-6
+          h-6
+          text-purple-400
+          group-hover:text-pink-400
+          transition
+        " />
+
+      </div>
+
+
+      <h3 className="
+        relative
+        z-10
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-slate-200
+        leading-tight
+      ">
+        How To
+        <br />
+        Validate Ideas
+      </h3>
+
+    </div>
+
+
+
+    {/* CARD 3 */}
+
+    <div className="
+      group
+      relative
+      h-[150px]
+      rounded-xl
+      border
+      border-slate-700
+      bg-slate-950/80
+      overflow-hidden
+      flex
+      flex-col
+      items-center
+      justify-center
+      text-center
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:border-indigo-400/50
+      hover:shadow-[0_15px_40px_rgba(99,102,241,0.15)]
+    ">
+
+      <div className="
+        absolute
+        inset-0
+        bg-gradient-to-br
+        from-indigo-500/[0.08]
+        via-transparent
+        to-pink-500/[0.04]
+        opacity-0
+        group-hover:opacity-100
+        transition
+      " />
+
+
+      <div className="
+        relative
+        z-10
+        w-11
+        h-11
+        rounded-xl
+        bg-indigo-500/10
+        border
+        border-indigo-400/20
+        flex
+        items-center
+        justify-center
+        mb-4
+        group-hover:scale-110
+        transition-all
+        duration-300
+      ">
+
+        <Cpu className="
+          w-6
+          h-6
+          text-indigo-400
+          group-hover:text-purple-400
+          transition
+        " />
+
+      </div>
+
+
+      <h3 className="
+        relative
+        z-10
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-slate-200
+        leading-tight
+      ">
+        How To Launch
+        <br />
+        Products
+      </h3>
+
+    </div>
+
+
+
+    {/* CARD 4 */}
+
+    <div className="
+      group
+      relative
+      h-[150px]
+      rounded-xl
+      border
+      border-slate-700
+      bg-slate-950/80
+      overflow-hidden
+      flex
+      flex-col
+      items-center
+      justify-center
+      text-center
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:border-pink-400/50
+      hover:shadow-[0_15px_40px_rgba(236,72,153,0.15)]
+    ">
+
+      <div className="
+        absolute
+        inset-0
+        bg-gradient-to-br
+        from-purple-500/[0.08]
+        via-transparent
+        to-pink-500/[0.06]
+        opacity-0
+        group-hover:opacity-100
+        transition
+      " />
+
+
+      <div className="
+        relative
+        z-10
+        w-11
+        h-11
+        rounded-xl
+        bg-pink-500/10
+        border
+        border-pink-400/20
+        flex
+        items-center
+        justify-center
+        mb-4
+        group-hover:scale-110
+        transition-all
+        duration-300
+      ">
+
+        <Handshake className="
+          w-6
+          h-6
+          text-pink-400
+          group-hover:text-purple-400
+          transition
+        " />
+
+      </div>
+
+
+      <h3 className="
+        relative
+        z-10
+        text-xs
+        sm:text-sm
+        font-semibold
+        text-slate-200
+        leading-tight
+      ">
+        How To Pitch
+        <br />
+        To Investors
+      </h3>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+            
 
 
             {/* =================================================
