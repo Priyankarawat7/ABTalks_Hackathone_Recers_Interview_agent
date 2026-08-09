@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
-import { 
-  Sparkles, BookOpen, Users, Play, Award, 
-  Terminal, ChevronDown, ChevronUp, Home, Star,
-  CheckCircle2, Share2, Trophy
-} from 'lucide-react';
-import candidatesData from '../data/candidates.json';
-import curriculumData from '../data/curriculum.json';
-import Navbar from './Navbar';
+import { useState } from "react";
+import {
+  Sparkles,
+  BookOpen,
+  Users,
+  Play,
+  ChevronDown,
+  ChevronUp,
+  Star
+} from "lucide-react";
+import candidatesData from "../data/candidates.json";
+import curriculumData from "../data/curriculum.json";
+import Navbar from "./Navbar";
+import logo from "../assets/logo-1.png";
+
+import company1 from "../assets/8KNYTYheOg273ilY2UKT4I0i6tw.webp";
+import company2 from "../assets/Aaitwyz8Bn0iAMCL5QA3tLToEWU.webp";
+import company3 from "../assets/cTFmAlgaEelNJtugChUwoMcoTyg.webp";
+import company4 from "../assets/KMovuQPuiF4uT9tKe43HZgN1lms.webp";
+import company5 from "../assets/pxv9LzlddUxmQlc2MokcI9Oi3lc.webp";
+import company6 from "../assets/ZsrrIuPtKUuolA7ZfD4oupAz0.webp";
+import company7 from "../assets/Google-Logo-PNG-Images-HD.png";
+import company8 from "../assets/White-Amazon-Logo-PNG-HD-Quality.png";
 
 export default function LandingPage({ onStartInterview }) {
   const [activeTab, setActiveTab] = useState("home");
