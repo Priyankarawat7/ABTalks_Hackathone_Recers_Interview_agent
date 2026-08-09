@@ -182,31 +182,87 @@ export default function LandingPage({ onStartInterview }) {
                 {/* Right Fade */}
                 <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
 
-                {/* Moving Track */}
-                <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
-                  {/* FIRST ROW */}
-                  <div className="flex items-center gap-12 md:gap-16 px-6">
-                    <span className="company-logo company-cadbury">Cadbury</span>
-                    <span className="company-logo company-canon">Canon</span>
-                    <span className="company-logo company-spark">Spark</span>
-                    <span className="company-logo company-amazon">amazon</span>
-                    <span className="company-logo company-facebook">facebook.</span>
-                    <span className="company-logo company-tinder">tinder.</span>
-                    <span className="company-logo company-airbnb">♡ airbnb</span>
-                  </div>
+    {/* Moving Track */}
+    <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
 
-                  {/* DUPLICATE ROW FOR INFINITE LOOP */}
-                  <div className="flex items-center gap-12 md:gap-16 px-6">
-                    <span className="company-logo company-cadbury">Cadbury</span>
-                    <span className="company-logo company-canon">Canon</span>
-                    <span className="company-logo company-spark">Spark</span>
-                    <span className="company-logo company-amazon">amazon</span>
-                    <span className="company-logo company-facebook">facebook.</span>
-                    <span className="company-logo company-tinder">tinder.</span>
-                    <span className="company-logo company-airbnb">♡ airbnb</span>
-                  </div>
-                </div>
-              </div>
+      {/* FIRST ROW */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
+
+        {/* Cadbury */}
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
+
+        {/* Canon */}
+        <span className="company-logo company-canon">
+          Canon
+        </span>
+
+        {/* Spark */}
+        <span className="company-logo company-spark">
+          Spark
+        </span>
+
+        {/* Amazon */}
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
+
+        {/* Facebook */}
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
+
+        {/* Tinder */}
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
+
+        {/* Airbnb */}
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
+
+      </div>
+
+
+      {/* DUPLICATE ROW FOR INFINITE LOOP */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
+
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
+
+        <span className="company-logo company-canon">
+          Canon
+        </span>
+
+        <span className="company-logo company-spark">
+          Spark
+        </span>
+
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
+
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
+
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
+
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
               {/* Styling + Animation */}
               <style>{`
