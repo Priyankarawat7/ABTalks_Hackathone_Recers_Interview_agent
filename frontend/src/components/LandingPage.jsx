@@ -195,49 +195,45 @@ export default function LandingPage({ onStartInterview }) {
     <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
 
 
-    {/* Moving Track */}
-    <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
+                {/* Moving Track */}
+                <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
+                  {/* FIRST ROW */}
+                  <div className="flex items-center gap-12 md:gap-16 px-6">
+                    {/* Cadbury */}
+                    <img src={company1} alt="" sizes="" srcset="" />
+                    <img src={company2} alt="" sizes="" srcset="" />
+                    <img src={company3} alt="" sizes="" srcset="" />
+                    <img src={company4} alt="" sizes="" srcset="" />
+                    <img src={company5} alt="" sizes="" srcset="" />
+                    <img src={company6} alt="" sizes="" srcset="" />
+                    <img className="h-20" src={company7} alt="" srcset="" />
+                    <img className="h-13" src={company8} alt="" srcset="" />
+                    {/* <span className="company-logo company-cadbury">
+                      Cadbury
+                    </span> */}
 
-      {/* FIRST ROW */}
-      <div className="flex items-center gap-12 md:gap-16 px-6">
+                    {/* Canon */}
+                    {/* <span className="company-logo company-canon">Canon</span> */}
 
-        {/* Cadbury */}
-        <span className="company-logo company-cadbury">
-          Cadbury
-        </span>
+                    {/* Spark */}
+                    {/* <span className="company-logo company-spark">Spark</span> */}
 
-        {/* Canon */}
-        <span className="company-logo company-canon">
-          Canon
-        </span>
+                    {/* Amazon */}
+                    {/* <span className="company-logo company-amazon">amazon</span> */}
 
-        {/* Spark */}
-        <span className="company-logo company-spark">
-          Spark
-        </span>
+                    {/* Facebook */}
+                    {/* <span className="company-logo company-facebook">
+                      facebook.
+                    </span> */}
 
-        {/* Amazon */}
-        <span className="company-logo company-amazon">
-          amazon
-        </span>
+                    {/* Tinder */}
+                    {/* <span className="company-logo company-tinder">tinder.</span> */}
 
-        {/* Facebook */}
-        <span className="company-logo company-facebook">
-          facebook.
-        </span>
-
-        {/* Tinder */}
-        <span className="company-logo company-tinder">
-          tinder.
-        </span>
-
-        {/* Airbnb */}
-        <span className="company-logo company-airbnb">
-          ♡ airbnb
-        </span>
-
-      </div>
-
+                    {/* Airbnb */}
+                    {/* <span className="company-logo company-airbnb">
+                      ♡ airbnb
+                    </span> */}
+                  </div>
 
       {/* DUPLICATE ROW FOR INFINITE LOOP */}
       <div className="flex items-center gap-12 md:gap-16 px-6">
