@@ -442,244 +442,275 @@ export default function LandingPage({ onStartInterview }) {
             </section>
 
 
-            {/* =================================================
-                TECHNOLOGIES
-            ================================================= */}
+         {/* ================= TECHNOLOGIES ================= */}
 
-            <section className="py-20 border-t border-slate-800/80">
+<section className="py-20 px-4 sm:px-6">
 
-              <div className="text-center mb-12">
+  {/* HEADING */}
+  <div className="text-center mb-12">
 
-                <div className="inline-flex items-center justify-center mb-7">
+    <div className="inline-flex items-center justify-center mb-7">
+      <span className="px-8 py-2 rounded-full bg-gradient-to-r from-indigo-500/30 via-purple-500/20 to-pink-500/30 border border-purple-400/30 text-white text-sm font-medium shadow-[0_0_30px_rgba(139,92,246,0.15)]">
+        TECHNOLOGIES
+      </span>
+    </div>
 
-                  <span className="px-8 py-2 rounded-full bg-gradient-to-r from-indigo-500/30 via-purple-500/20 to-pink-500/30 border border-purple-400/30 text-white text-sm font-medium shadow-[0_0_30px_rgba(139,92,246,0.15)]">
-                    TECHNOLOGIES
-                  </span>
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+      Technologies You'll Master
+    </h2>
 
-                </div>
+    <p className="text-slate-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+      Learn the technologies, frameworks and tools required to build
+      modern full-stack and AI-powered applications.
+    </p>
 
-
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-                  Industry Tools You'll Master
-                </h2>
-
-
-                <p className="text-slate-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
-                  Master the modern tools and technologies used to build
-                  production-ready AI applications.
-                </p>
-
-              </div>
+  </div>
 
 
-              {/* TABS */}
+  {/* TABS */}
 
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
+  <div className="flex flex-wrap justify-center gap-3 mb-8">
 
-                {[
-                  "Frontend",
-                  "Backend",
-                  "AI Engineering",
-                  "Infrastructure",
-                  "Engineering Skills",
-                ].map((tab) => (
+    {[
+      "Frontend",
+      "Backend",
+      "Database",
+      "AI Engineering",
+      "Engineering Skills",
+    ].map((tab) => (
 
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTechTab(tab)}
-                    className={`
-                      px-6 py-3 rounded-xl text-sm font-semibold border transition-all duration-300 cursor-pointer
+      <button
+        key={tab}
+        onClick={() => setActiveTechTab(tab)}
+        className={`
+          px-5 sm:px-6 py-3 rounded-xl text-sm font-semibold
+          border transition-all duration-300 cursor-pointer
 
-                      ${
-                        activeTechTab === tab
-                          ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-purple-400/50 shadow-lg shadow-purple-500/25"
-                          : "bg-slate-950/80 text-slate-300 border-slate-700 hover:border-purple-500/40 hover:bg-slate-900 hover:text-white"
-                      }
-                    `}
-                  >
-                    {tab}
-                  </button>
+          ${
+            activeTechTab === tab
+              ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-purple-400/50 shadow-lg shadow-purple-500/25"
+              : "bg-slate-950/80 text-slate-300 border-slate-700 hover:border-purple-500/40 hover:bg-slate-900 hover:text-white"
+          }
+        `}
+      >
+        {tab}
+      </button>
 
-                ))}
+    ))}
 
-              </div>
-
-
-              {/* TOOLS */}
-
-              <div className="max-w-6xl mx-auto rounded-2xl border border-indigo-500/30 bg-black/60 backdrop-blur-sm p-5 sm:p-8 relative overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.08)]">
-
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-purple-500/[0.03] to-pink-500/[0.05] pointer-events-none" />
-
-                <h3 className="relative z-10 text-center text-xl sm:text-2xl font-bold text-white mb-8">
-                  TOOLS AND TECHNOLOGIES
-                </h3>
+  </div>
 
 
-                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  {/* TECHNOLOGY CARD */}
 
-                  {activeTechTab === "Frontend" && (
-                    <>
-                      <TechCard
-                        name="React"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                      />
+  <div className="max-w-6xl mx-auto rounded-2xl border border-indigo-500/30 bg-black/60 backdrop-blur-sm p-5 sm:p-8 relative overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.08)]">
 
-                      <TechCard
-                        name="Next.js"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                        darkIcon
-                      />
+    {/* Background Glow */}
 
-                      <TechCard
-                        name="TypeScript"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                      />
-
-                      <TechCard
-                        name="Tailwind CSS"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                      />
-                    </>
-                  )}
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-purple-500/[0.03] to-pink-500/[0.05] pointer-events-none" />
 
 
-                  {activeTechTab === "Backend" && (
-                    <>
-                      <TechCard
-                        name="Node.js"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                      />
+    <h3 className="relative z-10 text-center text-xl sm:text-2xl font-bold text-white mb-8">
+      {activeTechTab === "Frontend" && "FRONTEND TECHNOLOGIES"}
 
-                      <TechCard
-                        name="Express.js"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                        darkIcon
-                      />
+      {activeTechTab === "Backend" && "BACKEND TECHNOLOGIES"}
 
-                      <TechCard
-                        name="Python"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                      />
+      {activeTechTab === "Database" && "DATABASE TECHNOLOGIES"}
 
-                      <TechCard
-                        name="FastAPI"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
-                      />
-                    </>
-                  )}
+      {activeTechTab === "AI Engineering" && "AI ENGINEERING TECHNOLOGIES"}
+
+      {activeTechTab === "Engineering Skills" && "ENGINEERING TOOLS & SKILLS"}
+    </h3>
 
 
-                  {activeTechTab === "AI Engineering" && (
-                    <>
-                      <TechCard
-                        name="LangChain"
-                        icon="https://cdn.simpleicons.org/langchain/ffffff"
-                      />
-
-                      <TechCard
-                        name="LangGraph"
-                        icon="https://cdn.simpleicons.org/langgraph/ffffff"
-                      />
-
-                      <TechCard
-                        name="OpenAI"
-                        icon="https://cdn.simpleicons.org/openai/ffffff"
-                      />
-
-                      <TechCard
-                        name="Pinecone"
-                        icon="https://cdn.simpleicons.org/pinecone/ffffff"
-                      />
-                    </>
-                  )}
+    <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
 
-                  {activeTechTab === "Infrastructure" && (
-                    <>
-                      <TechCard
-                        name="Docker"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                      />
+      {/* ================= FRONTEND ================= */}
 
-                      <TechCard
-                        name="Kubernetes"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-                      />
+      {activeTechTab === "Frontend" && (
+        <>
 
-                      <TechCard
-                        name="AWS"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                      />
+          <TechCard
+            name="HTML5"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+          />
 
-                      <TechCard
-                        name="GitHub"
-                        icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        darkIcon
-                      />
-                    </>
-                  )}
+          <TechCard
+            name="CSS3"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+          />
 
+          <TechCard
+            name="JavaScript"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          />
 
-                  {activeTechTab === "Engineering Skills" && (
-                    <>
-                      <TechCard
-                        name="System Design"
-                        icon="https://cdn.simpleicons.org/diagramsdotnet/ffffff"
-                      />
+          <TechCard
+            name="React.js"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          />
 
-                      <TechCard
-                        name="API Design"
-                        icon="https://cdn.simpleicons.org/swagger/ffffff"
-                      />
+          <TechCard
+            name="Tailwind CSS"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+          />
 
-                      <TechCard
-                        name="Git & GitHub"
-                        icon="https://cdn.simpleicons.org/git/ffffff"
-                      />
-
-                      <TechCard
-                        name="Testing"
-                        icon="https://cdn.simpleicons.org/jest/ffffff"
-                      />
-                    </>
-                  )}
-
-                </div>
-
-              </div>
+        </>
+      )}
 
 
-              {/* BUTTONS */}
+      {/* ================= BACKEND ================= */}
 
-              <div className="flex flex-wrap justify-center gap-3 mt-6">
+      {activeTechTab === "Backend" && (
+        <>
 
-                <button
-                  onClick={() => setActiveTab("curriculum")}
-                  className="px-5 py-3 rounded-lg border border-slate-700 bg-slate-900 text-white text-sm font-semibold hover:border-indigo-500/50 hover:bg-slate-800 transition cursor-pointer"
-                >
-                  Courses
-                </button>
+          <TechCard
+            name="Node.js"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          />
+
+          <TechCard
+            name="Express.js"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            darkIcon
+          />
+
+          <TechCard
+            name="REST API"
+            icon="https://cdn.simpleicons.org/postman/ffffff"
+          />
+
+          <TechCard
+            name="EJS"
+            icon="https://cdn.simpleicons.org/ejs/ffffff"
+          />
+
+        </>
+      )}
 
 
-                <button
-                  className="px-5 py-3 rounded-lg border border-slate-700 bg-slate-900 text-white text-sm font-semibold hover:border-purple-500/50 hover:bg-slate-800 transition cursor-pointer"
-                >
-                  Request Callback
-                </button>
+      {/* ================= DATABASE ================= */}
+
+      {activeTechTab === "Database" && (
+        <>
+
+          <TechCard
+            name="MongoDB"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+          />
+
+          <TechCard
+            name="MySQL"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+          />
+
+          <TechCard
+            name="Database Design"
+            icon="https://cdn.simpleicons.org/mysql/ffffff"
+          />
+
+          <TechCard
+            name="CRUD Operations"
+            icon="https://cdn.simpleicons.org/databricks/ffffff"
+          />
+
+        </>
+      )}
 
 
-                <button
-                  onClick={() => setActiveTab("roster")}
-                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm font-bold hover:from-indigo-400 hover:via-purple-400 hover:to-pink-400 transition shadow-lg shadow-purple-500/25 cursor-pointer"
-                >
-                  Buy Now →
-                </button>
+      {/* ================= AI ENGINEERING ================= */}
 
-              </div>
+      {activeTechTab === "AI Engineering" && (
+        <>
 
-            </section>
+          <TechCard
+            name="Google Gemini"
+            icon="https://cdn.simpleicons.org/googlegemini/ffffff"
+          />
 
+          <TechCard
+            name="OpenAI"
+            icon="https://cdn.simpleicons.org/openai/ffffff"
+          />
+
+          <TechCard
+            name="LangChain"
+            icon="https://cdn.simpleicons.org/langchain/ffffff"
+          />
+
+          <TechCard
+            name="RAG"
+            icon="https://cdn.simpleicons.org/chainlink/ffffff"
+          />
+
+        </>
+      )}
+
+
+      {/* ================= ENGINEERING ================= */}
+
+      {activeTechTab === "Engineering Skills" && (
+        <>
+
+          <TechCard
+            name="Git"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+          />
+
+          <TechCard
+            name="GitHub"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            darkIcon
+          />
+
+          <TechCard
+            name="Postman"
+            icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+          />
+
+          <TechCard
+            name="System Design"
+            icon="https://cdn.simpleicons.org/diagramsdotnet/ffffff"
+          />
+
+        </>
+      )}
+
+    </div>
+
+  </div>
+
+
+  {/* ================= CTA BUTTONS ================= */}
+
+  <div className="flex flex-wrap justify-center gap-3 mt-8">
+
+    <button
+      onClick={() => setActiveTab("curriculum")}
+      className="px-5 py-3 rounded-lg border border-slate-700 bg-slate-900 text-white text-sm font-semibold hover:border-indigo-500/50 hover:bg-slate-800 transition cursor-pointer"
+    >
+      View Curriculum
+    </button>
+
+
+    <button
+      className="px-5 py-3 rounded-lg border border-slate-700 bg-slate-900 text-white text-sm font-semibold hover:border-purple-500/50 hover:bg-slate-800 transition cursor-pointer"
+    >
+      Request Callback
+    </button>
+
+
+    <button
+      onClick={() => setActiveTab("roster")}
+      className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm font-bold hover:from-indigo-400 hover:via-purple-400 hover:to-pink-400 transition shadow-lg shadow-purple-500/25 cursor-pointer"
+    >
+      Start Learning →
+    </button>
+
+  </div>
+
+</section>
 
             {/* =================================================
                 CURRICULUM PREVIEW
