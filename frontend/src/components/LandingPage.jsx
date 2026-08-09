@@ -19,7 +19,7 @@ import company3 from "../assets/cTFmAlgaEelNJtugChUwoMcoTyg.webp"
 import company4 from "../assets/KMovuQPuiF4uT9tKe43HZgN1lms.webp"
 import company5 from "../assets/pxv9LzlddUxmQlc2MokcI9Oi3lc.webp"
 import company6 from "../assets/ZsrrIuPtKUuolA7ZfD4oupAz0.webp"
-import company7 from "../assets/Google-Logo-PNG-Images-HD.png"
+import company7 from "../assets/Google-Logo-PNG-Images-HD.png";
 import company8 from "../assets/White-Amazon-Logo-PNG-HD-Quality.png"
 
 export default function LandingPage({ onStartInterview }) {
