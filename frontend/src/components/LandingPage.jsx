@@ -11,6 +11,7 @@ import {
 import candidatesData from "../data/candidates.json";
 import curriculumData from "../data/curriculum.json";
 import Navbar from "./Navbar";
+import logo from "../assets/logo-1.png"
 
 import company1 from "../assets/8KNYTYheOg273ilY2UKT4I0i6tw.webp";
 import company2 from "../assets/Aaitwyz8Bn0iAMCL5QA3tLToEWU.webp";
@@ -102,7 +103,10 @@ export default function LandingPage({ onStartInterview }) {
       <main className="max-w-7xl mx-auto px-6 pb-24 relative z-10">
         {activeTab === "home" && (
           <div>
-            <section className="pt-20 pb-16 text-center relative">
+            <section className="pt-12 pb-16 text-center relative">
+              <div className="flex justify-center pb-4 pt-4">
+                <img className="h-20" src={logo} alt="" srcset="" />
+              </div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-6">
                 <Sparkles className="w-3.5 h-3.5 animate-pulse" />
                 ABTalks AI Cohort 2026
