@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, ArrowLeft, Loader2, Terminal } from 'lucide-react';
 import axios from 'axios';
+import Footer from './Footer';
 
 export default function InterviewRoom({ candidate, sessionId, onEndInterview, onBack }) {
   const [messages, setMessages] = useState([]);
@@ -199,6 +200,8 @@ export default function InterviewRoom({ candidate, sessionId, onEndInterview, on
 
         </div>
       </div>
+      <Footer/>
     </div>
+    
   );
 }

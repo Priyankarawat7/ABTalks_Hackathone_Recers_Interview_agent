@@ -8,6 +8,17 @@ import candidatesData from '../data/candidates.json';
 import curriculumData from '../data/curriculum.json';
 import Navbar from './Navbar';
 
+import company1 from "../assets/8KNYTYheOg273ilY2UKT4I0i6tw.webp";
+import company2 from "../assets/Aaitwyz8Bn0iAMCL5QA3tLToEWU.webp";
+import company3 from "../assets/cTFmAlgaEelNJtugChUwoMcoTyg.webp";
+import company4 from "../assets/KMovuQPuiF4uT9tKe43HZgN1lms.webp";
+import company5 from "../assets/pxv9LzlddUxmQlc2MokcI9Oi3lc.webp";
+import company6 from "../assets/ZsrrIuPtKUuolA7ZfD4oupAz0.webp";
+import company7 from "../assets/Google-Logo-PNG-Images-HD.png";
+import company8 from "../assets/White-Amazon-Logo-PNG-HD-Quality.png";
+import Footer from './Footer';
+
+
 export default function LandingPage({ onStartInterview }) {
   const [activeTab, setActiveTab] = useState('home');
   const [openModule, setOpenModule] = useState(1);
@@ -139,71 +150,189 @@ export default function LandingPage({ onStartInterview }) {
                 </button>
               </div>
             </section>
+<section className="py-16 border-t border-slate-800/80 overflow-hidden">
 
-            <section className="py-16 border-t border-slate-800/80 overflow-hidden">
-              <div className="relative w-full overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
+  <div className="relative w-full overflow-hidden">
 
-                <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
-                  <div className="flex items-center gap-12 md:gap-16 px-6">
-                    <span className="company-logo company-cadbury">Cadbury</span>
-                    <span className="company-logo company-canon">Canon</span>
-                    <span className="company-logo company-spark">Spark</span>
-                    <span className="company-logo company-amazon">amazon</span>
-                    <span className="company-logo company-facebook">facebook.</span>
-                    <span className="company-logo company-tinder">tinder.</span>
-                    <span className="company-logo company-airbnb">♡ airbnb</span>
-                  </div>
+    {/* LEFT FADE */}
+    <div className="
+      absolute
+      left-0
+      top-0
+      bottom-0
+      w-20
+      md:w-36
+      bg-gradient-to-r
+      from-[#07090e]
+      to-transparent
+      z-10
+      pointer-events-none
+    " />
 
-                  <div className="flex items-center gap-12 md:gap-16 px-6">
-                    <span className="company-logo company-cadbury">Cadbury</span>
-                    <span className="company-logo company-canon">Canon</span>
-                    <span className="company-logo company-spark">Spark</span>
-                    <span className="company-logo company-amazon">amazon</span>
-                    <span className="company-logo company-facebook">facebook.</span>
-                    <span className="company-logo company-tinder">tinder.</span>
-                    <span className="company-logo company-airbnb">♡ airbnb</span>
-                  </div>
-                </div>
-              </div>
+    {/* RIGHT FADE */}
+    <div className="
+      absolute
+      right-0
+      top-0
+      bottom-0
+      w-20
+      md:w-36
+      bg-gradient-to-l
+      from-[#07090e]
+      to-transparent
+      z-10
+      pointer-events-none
+    " />
 
-              <style>{`
-                .company-logo {
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
-                  white-space: nowrap;
-                  color: #d8dbea;
-                  opacity: 0.8;
-                  transition: all 0.3s ease;
-                  cursor: default;
-                }
-                .company-logo:hover {
-                  opacity: 1;
-                  transform: scale(1.04);
-                }
-                .company-cadbury { font-family: cursive; font-size: 31px; font-weight: 600; font-style: italic; letter-spacing: -1.5px; }
-                .company-canon { font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: 800; letter-spacing: -1px; }
-                .company-spark { font-family: cursive; font-size: 32px; font-style: italic; font-weight: 600; letter-spacing: -1px; }
-                .company-amazon { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -1.5px; position: relative; }
-                .company-amazon::after { content: ""; position: absolute; width: 38px; height: 8px; border-bottom: 3px solid #d8dbea; border-radius: 50%; bottom: -5px; right: 2px; transform: rotate(5deg); }
-                .company-facebook { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -1.5px; }
-                .company-tinder { font-family: Arial, Helvetica, sans-serif; font-size: 29px; font-weight: 700; letter-spacing: -1.5px; }
-                .company-airbnb { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
-                @keyframes company-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-                .animate-company-marquee { animation: company-marquee 24s linear infinite; }
-              `}</style>
-            </section>
 
-            <section className="py-16 border-t border-slate-800/80">
-              <div className="text-center mb-12">
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">INSTRUCTORS & INDUSTRY EXPERTS</span>
-                <h2 className="text-3xl font-black text-white">Learn From Industry Leaders</h2>
-              </div>
+    {/* MARQUEE */}
+    <div className="
+      flex
+      w-max
+      animate-company-marquee
+      hover:[animation-play-state:paused]
+    ">
 
-            </section>
+      {/* FIRST SET */}
+      <div className="flex items-center gap-12 md:gap-20 px-6">
 
+        <img
+          src={company1}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company2}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company3}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company4}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company5}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company6}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company7}
+          alt="Google"
+          className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+        />
+
+        <img
+          src={company8}
+          alt="Amazon"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+      </div>
+
+
+      {/* DUPLICATE SET — INFINITE LOOP */}
+      <div className="flex items-center gap-12 md:gap-20 px-6">
+
+        <img
+          src={company1}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company2}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company3}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company4}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company5}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company6}
+          alt="Company Logo"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+        <img
+          src={company7}
+          alt="Google"
+          className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+        />
+
+        <img
+          src={company8}
+          alt="Amazon"
+          className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* MARQUEE ANIMATION */}
+  <style>{`
+
+    @keyframes company-marquee {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+
+    }
+
+    .animate-company-marquee {
+
+      animation:
+        company-marquee
+        25s
+        linear
+        infinite;
+
+    }
+
+  `}</style>
+
+</section>
 
             {/* =================================================
                 MENTORS
@@ -1237,77 +1366,7 @@ export default function LandingPage({ onStartInterview }) {
 
       </main>
 
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-12 px-6 relative z-10 font-sans">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
-                AB
-              </div>
-
-              <span className="font-extrabold text-white text-lg">
-                ABTalks AI Cohort
-              </span>
-
-            </div>
-
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed mb-4">
-              Empowering engineers to build production-grade Generative AI, Multi-Agent Systems, and Vector RAG pipelines evaluated by intelligent assessment agents.
-            </p>
-
-            <div className="text-[11px] font-mono text-slate-500">
-              © 2026 ABTalks AI Engine. All rights reserved.
-            </div>
-          </div>
-
-          <div>
-
-            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">
-              Quick Links
-            </h4>
-
-
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><button onClick={() => setActiveTab('home')} className="hover:text-indigo-400 cursor-pointer">Cohort Overview</button></li>
-              <li><button onClick={() => setActiveTab('curriculum')} className="hover:text-indigo-400 cursor-pointer">31-Day Syllabus</button></li>
-              <li><button onClick={() => setActiveTab('roster')} className="hover:text-indigo-400 cursor-pointer">Candidate Roster</button></li>
-            </ul>
-          </div>
-
-          <div>
-
-            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">
-              Core Tech Stack
-            </h4>
-
-
-            <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-indigo-300">
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Groq LLM
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Breeth Memory
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                FastAPI
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                React + Vite
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Tailwind CSS
-              </span>
-
-            </div>
-          </div>
-
-        </div>
-      </footer>
+    <Footer/>
 
     </div>
   );
