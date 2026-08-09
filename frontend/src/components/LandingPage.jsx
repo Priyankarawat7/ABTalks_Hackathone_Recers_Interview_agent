@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-import {
-  Sparkles,
-  BookOpen,
-  Users,
-  Play,
-  ChevronDown,
-  ChevronUp,
-  Star,
+import { 
+  Sparkles, BookOpen, Users, Play, Award, 
+  Terminal, ChevronDown, ChevronUp, Home, Star,
+  CheckCircle2, Share2, Trophy
 } from 'lucide-react';
-
 import candidatesData from '../data/candidates.json';
 import curriculumData from '../data/curriculum.json';
 import Navbar from './Navbar';
 
 export default function LandingPage({ onStartInterview }) {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState("home");
   const [openModule, setOpenModule] = useState(1);
   const [openFaq, setOpenFaq] = useState(0);
 
@@ -22,66 +17,57 @@ export default function LandingPage({ onStartInterview }) {
   const modules = curriculumData.modules || [];
   const days = curriculumData.days || [];
 
-  // =====================================================
-  // COMPANY LOGOS
-  // =====================================================
-
+  // Authentic Company SVG Logos
   const companyLogos = [
-    {
-      name: 'Google',
-      logo: 'https://cdn.simpleicons.org/google',
-    },
-    {
-      name: 'Microsoft',
-      logo: 'https://cdn.simpleicons.org/microsoft',
-    },
-    {
-      name: 'Amazon',
-      logo: 'https://cdn.simpleicons.org/amazon',
-    },
-    {
-      name: 'Meta',
-      logo: 'https://cdn.simpleicons.org/meta',
-    },
-    {
-      name: 'GitHub',
-      logo: 'https://cdn.simpleicons.org/github',
-    },
-    {
-      name: 'OpenAI',
-      logo: 'https://cdn.simpleicons.org/openai',
-    },
-    {
-      name: 'NVIDIA',
-      logo: 'https://cdn.simpleicons.org/nvidia',
-    },
-    {
-      name: 'Netflix',
-      logo: 'https://cdn.simpleicons.org/netflix',
-    },
-  ];
-
-  // =====================================================
-  // MENTORS
-  // =====================================================
+  {
+    name: "Google",
+    logo: "https://cdn.simpleicons.org/google",
+  },
+  {
+    name: "Microsoft",
+    logo: "https://cdn.simpleicons.org/microsoft",
+  },
+  {
+    name: "Amazon",
+    logo: "https://cdn.simpleicons.org/amazon",
+  },
+  {
+    name: "Meta",
+    logo: "https://cdn.simpleicons.org/meta",
+  },
+  {
+    name: "GitHub",
+    logo: "https://cdn.simpleicons.org/github",
+  },
+  {
+    name: "OpenAI",
+    logo: "https://cdn.simpleicons.org/openai",
+  },
+  {
+    name: "NVIDIA",
+    logo: "https://cdn.simpleicons.org/nvidia",
+  },
+  {
+    name: "Netflix",
+    logo: "https://cdn.simpleicons.org/netflix",
+  },
+];
 
   const mentors = [
     {
-      name: 'Harsh Sharma',
-      role: 'Lead AI Engineer & Cohort Instructor',
-      exp: 'Ex-Google / 8+ Yrs in Generative AI',
-      image:
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300',
-      bio: 'Specializes in Large Language Models, Fine-Tuning (LoRA/QLoRA), RAG Architectures, and Multi-Agent Orchestration.',
+      name: "Harsh Sharma",
+      role: "Lead AI Engineer & Cohort Instructor",
+      exp: "Ex-Google / 8+ Yrs in Generative AI",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300",
+      bio: "Specializes in Large Language Models, Fine-Tuning (LoRA/QLoRA), RAG Architectures, and Multi-Agent Orchestration."
     },
     {
-      name: 'Sarthak Roy',
-      role: 'Senior Systems & Infrastructure Specialist',
-      exp: 'Ex-Meta / Kubernetes & MCP Expert',
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300',
-      bio: 'Expert in Dockerizing LLM Backends, Vector DB Optimizations (Pinecone/ChromaDB), and Agentic Memory Systems.',
-    },
+      name: "Sarthak Roy",
+      role: "Senior Systems & Infrastructure Specialist",
+      exp: "Ex-Meta / Kubernetes & MCP Expert",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
+      bio: "Expert in Dockerizing LLM Backends, Vector DB Optimizations (Pinecone/ChromaDB), and Agentic Memory Systems."
+    }
   ];
 
   // =====================================================
@@ -90,29 +76,26 @@ export default function LandingPage({ onStartInterview }) {
 
   const reviews = [
     {
-      name: 'Sarah Johnson',
-      role: 'Placed at Cohere AI',
-      review:
-        'The 31-day AI Cohort completely transformed my understanding of Vector Databases and RAG. The live evaluation helped me clear 4 technical rounds easily!',
+      name: "Sarah Johnson",
+      role: "Placed at Cohere AI",
+      review: "The 31-day AI Cohort completely transformed my understanding of Vector Databases and RAG. The live evaluation helped me clear 4 technical rounds easily!",
       stars: 5,
-      avatar: 'SJ',
+      avatar: "SJ"
     },
     {
-      name: 'Emily Chen',
-      role: 'Placed at Meta',
-      review:
-        'Building end-to-end Multi-Agent workflows with LangGraph and Model Context Protocol (MCP) gave me the exact hands-on edge required for Senior AI roles.',
+      name: "Emily Chen",
+      role: "Placed at Meta",
+      review: "Building end-to-end Multi-Agent workflows with LangGraph and Model Context Protocol (MCP) gave me the exact hands-on edge required for Senior AI roles.",
       stars: 5,
-      avatar: 'EC',
+      avatar: "EC"
     },
     {
-      name: 'Ravi Patel',
-      role: 'Placed at Pinecone',
-      review:
-        'The hands-on projects on Day 15 (LoRA Fine-tuning) and Day 28 (K8s Deployment) were top notch. Got hired right after the Capstone Demo!',
+      name: "Ravi Patel",
+      role: "Placed at Pinecone",
+      review: "The hands-on projects on Day 15 (LoRA Fine-tuning) and Day 28 (K8s Deployment) were top notch. Got hired right after the Capstone Demo!",
       stars: 5,
-      avatar: 'RP',
-    },
+      avatar: "RP"
+    }
   ];
 
   // =====================================================
@@ -121,35 +104,27 @@ export default function LandingPage({ onStartInterview }) {
 
   const faqs = [
     {
-      q: 'ABTalks AI Cohort Assessment & Placement Portal kaise kaam karta hai?',
-      a: 'Yeh platform 31-day AI Cohort ke curriculum par candidates ki mastery evaluate karta hai aur LLM-driven adaptive interviews ke through placement report generate karta hai.',
+      q: "ABTalks AI Cohort Assessment & Placement Portal kaise kaam karta hai?",
+      a: "Yeh platform 31-day AI Cohort ke curriculum par candidates ki mastery evaluate karta hai aur LLM-driven adaptive interviews ke through placement report generate karta hai."
     },
     {
-      q: 'Kya cohort complete hone par Official Completion Certificate milta hai?',
-      a: 'Haan! Successfully 31-day missions pass karne aur interview clearing par Industry-Recognized Verified Digital Certificate milta hai jisme unique Credential ID aur QR verification hoti hai.',
+      q: "Kya cohort complete hone par Official Completion Certificate milta hai?",
+      a: "Haan! Successfully 31-day missions pass karne aur interview clearing par Industry-Recognized Verified Digital Certificate milta hai jisme unique Credential ID aur QR verification hoti hai."
     },
     {
-      q: 'Placement support kaise provide kiya jata hai?',
-      a: 'Graduate candidates ke interview scores humari hiring partner companies ke hiring managers ko direct refer kiye jate hain.',
-    },
+      q: "Placement support kaise provide kiya jata hai?",
+      a: "Graduate candidates ke interview scores humari hiring partner companies ke hiring managers ko direct refer kiye jate hain."
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-white overflow-x-hidden">
-
-      {/* =====================================================
-          NAVBAR
-      ===================================================== */}
-
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-      />
-
-      {/* =====================================================
-          BACKGROUND LIGHTING
-      ===================================================== */}
-
+    <div className="min-h-screen bg-[#07090e] text-slate-100 font-sans selection:bg-indigo-500 selection:text-white relative overflow-hidden">
+      
+       <Navbar
+      activeTab={activeTab}
+      setActiveTab={setActiveTab}
+    />
+      {/* Background Lighting Gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[500px] bg-indigo-600/15 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="absolute top-[1200px] right-0 w-[600px] h-[400px] bg-purple-600/10 blur-[150px] rounded-full pointer-events-none" />
@@ -160,25 +135,13 @@ export default function LandingPage({ onStartInterview }) {
 
       <main className="max-w-7xl mx-auto px-6 pb-24 relative z-10">
 
-        {/* =====================================================
-            HOME TAB
-        ===================================================== */}
-
+        {/* TAB 1: HOME PAGE HERO & SECTIONS */}
         {activeTab === 'home' && (
           <div>
-
-            {/* =================================================
-                HERO
-            ================================================= */}
-
+            {/* HERO SECTION (Cleaned - No Cards Below) */}
             <section className="pt-20 pb-16 text-center relative">
-
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-6">
-
-                <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-
-                ABTalks AI Cohort 2026
-
+                <Sparkles className="w-3.5 h-3.5 animate-pulse text-indigo-400" /> ABTalks AI Cohort 2026
               </div>
 
               <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight max-w-5xl mx-auto">
@@ -194,444 +157,262 @@ export default function LandingPage({ onStartInterview }) {
               </h1>
 
               <p className="mt-6 text-slate-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-
-                31 Days of hands-on engineering covering Vector Search,
-                RAG Engines, Multi-Agent Orchestration, Model Context
-                Protocol (MCP), and Kubernetes. Evaluated by adaptive
-                AI interview agents!
-
+                31 Days of hands-on engineering covering Vector Search, RAG Engines, Multi-Agent Orchestration, Model Context Protocol (MCP), and Kubernetes[cite: 4]. Evaluated by adaptive AI interview agents[cite: 2]!
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
 
                 <button
-                  onClick={() => setActiveTab('roster')}
+                  onClick={() => setActiveTab("roster")}
                   className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-bold text-sm shadow-xl shadow-indigo-600/30 transition flex items-center justify-center gap-2 cursor-pointer"
                 >
-
-                  <Play className="w-4 h-4 fill-current" />
-
-                  Launch Candidate Interview Assessment
-
+                  <Play className="w-4 h-4 fill-current" /> Launch Candidate Interview Assessment
                 </button>
 
                 <button
-                  onClick={() => setActiveTab('curriculum')}
+                  onClick={() => setActiveTab("curriculum")}
                   className="bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 px-8 py-4 rounded-xl font-bold text-sm transition flex items-center justify-center gap-2 cursor-pointer"
                 >
-
-                  <BookOpen className="w-4 h-4" />
-
-                  Explore 31-Day Syllabus
-
+                  <BookOpen className="w-4 h-4" /> Explore 31-Day Syllabus
                 </button>
 
               </div>
 
             </section>
 
-
-            {/* =================================================
-                WHERE OUR GRADUATES WORK
-            ================================================= */}
-
-            <section className="py-16 border-t border-slate-800/80 overflow-hidden">
-
-              <div className="text-center mb-10">
-
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  WHERE OUR GRADUATES WORK
-                </span>
-
-                <h2 className="text-3xl sm:text-4xl font-black text-white">
-                  Built For Industry-Ready AI Careers
-                </h2>
-
-                <p className="text-slate-400 text-sm mt-3 max-w-2xl mx-auto">
-                  Develop the skills and confidence required to build
-                  and explain production-grade AI systems.
-                </p>
-
-              </div>
+            {/* EARN COMPLETION CERTIFICATE SECTION */}
+       {/* WHERE OUR GRADUATES WORK */}
+<section className="py-16 border-t border-slate-800/80 overflow-hidden">
 
 
-              {/* ================= MARQUEE ================= */}
+  {/* MARQUEE */}
+  <div className="relative w-full overflow-hidden">
 
-              <div className="relative w-full overflow-hidden py-6">
+    {/* Left Fade */}
+    <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
 
-                {/* LEFT FADE */}
-
-                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#07090e] to-transparent z-10 pointer-events-none" />
-
-
-                {/* RIGHT FADE */}
-
-                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
+    {/* Right Fade */}
+    <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07090e] to-transparent z-10 pointer-events-none" />
 
 
-                {/* MOVING TRACK */}
+    {/* Moving Track */}
+    <div className="flex w-max animate-company-marquee hover:[animation-play-state:paused]">
 
-                <div className="company-marquee-track">
+      {/* FIRST ROW */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
 
-                  {/* FIRST SET */}
+        {/* Cadbury */}
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
 
-                  <div className="company-marquee-group">
+        {/* Canon */}
+        <span className="company-logo company-canon">
+          Canon
+        </span>
 
-                    {companyLogos.map((company) => (
+        {/* Spark */}
+        <span className="company-logo company-spark">
+          Spark
+        </span>
 
-                      <div
-                        key={company.name}
-                        className="company-logo-item"
-                      >
+        {/* Amazon */}
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
 
-                        <img
-                          src={company.logo}
-                          alt={company.name}
-                          className="company-logo-img"
-                        />
+        {/* Facebook */}
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
 
-                      </div>
+        {/* Tinder */}
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
 
-                    ))}
+        {/* Airbnb */}
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
 
-                  </div>
-
-
-                  {/* DUPLICATE SET */}
-
-                  <div className="company-marquee-group">
-
-                    {companyLogos.map((company) => (
-
-                      <div
-                        key={`duplicate-${company.name}`}
-                        className="company-logo-item"
-                      >
-
-                        <img
-                          src={company.logo}
-                          alt={company.name}
-                          className="company-logo-img"
-                        />
-
-                      </div>
-
-                    ))}
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </section>
+      </div>
 
 
-            {/* =================================================
-                MENTORS
-            ================================================= */}
+      {/* DUPLICATE ROW FOR INFINITE LOOP */}
+      <div className="flex items-center gap-12 md:gap-16 px-6">
 
+        <span className="company-logo company-cadbury">
+          Cadbury
+        </span>
+
+        <span className="company-logo company-canon">
+          Canon
+        </span>
+
+        <span className="company-logo company-spark">
+          Spark
+        </span>
+
+        <span className="company-logo company-amazon">
+          amazon
+        </span>
+
+        <span className="company-logo company-facebook">
+          facebook.
+        </span>
+
+        <span className="company-logo company-tinder">
+          tinder.
+        </span>
+
+        <span className="company-logo company-airbnb">
+          ♡ airbnb
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* Styling + Animation */}
+  <style>{`
+
+    .company-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      color: #d8dbea;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .company-logo:hover {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+
+    /* CADBURY STYLE */
+    .company-cadbury {
+      font-family: cursive;
+      font-size: 31px;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* CANON STYLE */
+    .company-canon {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+
+    /* SPARK STYLE */
+    .company-spark {
+      font-family: cursive;
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+
+    /* AMAZON STYLE */
+    .company-amazon {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      position: relative;
+    }
+
+    .company-amazon::after {
+      content: "";
+      position: absolute;
+      width: 38px;
+      height: 8px;
+      border-bottom: 3px solid #d8dbea;
+      border-radius: 50%;
+      bottom: -5px;
+      right: 2px;
+      transform: rotate(5deg);
+    }
+
+
+    /* FACEBOOK STYLE */
+    .company-facebook {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* TINDER STYLE */
+    .company-tinder {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 29px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+
+    /* AIRBNB STYLE */
+    .company-airbnb {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+
+    /* MARQUEE */
+    @keyframes company-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-company-marquee {
+      animation: company-marquee 24s linear infinite;
+    }
+
+  `}</style>
+
+</section>
+            {/* MENTORS SECTION */}
             <section className="py-16 border-t border-slate-800/80">
-
               <div className="text-center mb-12">
-
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  EXPERT GUIDANCE
-                </span>
-
-                <h2 className="text-3xl font-black text-white">
-                  Learn From Industry Experts
-                </h2>
-
-                <p className="text-slate-400 text-sm mt-3 max-w-2xl mx-auto">
-                  Get guidance across Generative AI, RAG,
-                  Agentic Systems, MCP and production deployment.
-                </p>
-
+                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">INSTRUCTORS & INDUSTRY EXPERTS</span>
+                <h2 className="text-3xl font-black text-white">Learn From Industry Leaders</h2>
               </div>
-
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-
                 {mentors.map((m, idx) => (
-
-                  <div
-                    key={idx}
-                    className="bg-slate-900/70 border border-slate-800 rounded-2xl p-6 flex flex-col sm:flex-row gap-5 items-center sm:items-start"
-                  >
-
-                    <img
-                      src={m.image}
-                      alt={m.name}
-                      className="w-20 h-20 rounded-2xl object-cover border border-indigo-500/30 shrink-0"
-                    />
-
+                  <div key={idx} className="bg-slate-900/70 border border-slate-800 rounded-2xl p-6 flex flex-col sm:flex-row gap-5 items-center sm:items-start">
+                    <img src={m.image} alt={m.name} className="w-20 h-20 rounded-2xl object-cover border border-indigo-500/30 shrink-0" />
                     <div>
-
-                      <h3 className="font-bold text-lg text-white">
-                        {m.name}
-                      </h3>
-
-                      <p className="text-xs text-indigo-400 font-mono mt-0.5">
-                        {m.role}
-                      </p>
-
-                      <p className="text-[11px] text-slate-500 font-mono mt-0.5">
-                        {m.exp}
-                      </p>
-
-                      <p className="text-xs text-slate-400 mt-3 leading-relaxed">
-                        {m.bio}
-                      </p>
-
+                      <h3 className="font-bold text-lg text-white">{m.name}</h3>
+                      <p className="text-xs text-indigo-400 font-mono mt-0.5">{m.role}</p>
+                      <p className="text-[11px] text-slate-500 font-mono mt-0.5">{m.exp}</p>
+                      <p className="text-xs text-slate-400 mt-3 leading-relaxed">{m.bio}</p>
                     </div>
-
                   </div>
-
                 ))}
-
               </div>
-
-            </section>
-
-
-            {/* =================================================
-                CERTIFICATION
-            ================================================= */}
-
-            <section className="py-20 border-t border-slate-800/80">
-
-              {/* HEADING */}
-
-              <div className="text-center mb-14 ">
-
-                <h2 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent  tracking-tight leading-tight">
-
-                  Get Certified With Recognized
-
-                  <br />
-
-                  <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent ">
-                    Validation
-                  </span>
-
-                </h2>
-
-              </div>
-
-
-              {/* CERTIFICATE CARD */}
-
-              <div className="max-w-6xl mx-auto border border-slate-800 rounded-2xl bg-black overflow-hidden">
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-
-
-                  {/* ================= LEFT ================= */}
-
-                  <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-
-                    <h3 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent  leading-tight">
-
-                      Earn Certificate Of
-
-                      <br />
-
-                      <span className="text-indigo-400">
-                        Completion
-                      </span>
-
-                    </h3>
-
-
-                    <div className="mt-10 space-y-7">
-
-                      <div className="flex gap-4 items-start">
-
-                        <span className="text-indigo-400 text-xl mt-0.5">
-                          •
-                        </span>
-
-                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-
-                          Build and showcase real AI projects and
-                          gain hands-on experience by completing
-                          the 31-day AI engineering cohort.
-
-                        </p>
-
-                      </div>
-
-
-                      <div className="flex gap-4 items-start">
-
-                        <span className="text-indigo-400 text-xl mt-0.5">
-                          •
-                        </span>
-
-                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-
-                          Complete AI-powered technical assessments
-                          and receive detailed feedback based on
-                          your learning journey.
-
-                        </p>
-
-                      </div>
-
-
-                      <div className="flex gap-4 items-start">
-
-                        <span className="text-indigo-400 text-xl mt-0.5">
-                          •
-                        </span>
-
-                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-
-                          Earn a verified certificate upon successful
-                          completion of the cohort and interview
-                          assessment.
-
-                        </p>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-
-
-                  {/* ================= RIGHT ================= */}
-
-                  <div className="relative flex items-center justify-center p-8 sm:p-12 overflow-hidden">
-
-                    {/* GREEN GLOW */}
-
-                    <div className="absolute w-[350px] h-[350px] bg-emerald-500/10 blur-[100px] rounded-full" />
-
-
-                    {/* BACK CERTIFICATE */}
-
-                    <div className="absolute w-[78%] max-w-[520px] aspect-[1.42/1] rounded-xl bg-slate-700/70 border border-slate-600/50 translate-x-6 -translate-y-5" />
-
-
-                    {/* MAIN CERTIFICATE */}
-
-                    <div className="relative w-full max-w-[540px] aspect-[1.42/1] bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-300">
-
-
-                      {/* BRAND */}
-
-                      <div className="absolute top-0 right-0 text-indigo-400 text-white px-5 py-3 text-[9px] font-bold tracking-wider">
-                        ABTALKS®
-                      </div>
-
-
-                      {/* VERTICAL LABEL */}
-
-                      <div className="absolute left-6 top-1/2 -translate-y-1/2">
-
-                        <div className="text-indigo-800 text-white px-2.5 py-3 text-[10px] tracking-widest [writing-mode:vertical-rl] rotate-180">
-                          CERTIFICATE
-                        </div>
-
-                      </div>
-
-
-                      {/* CONTENT */}
-
-                      <div className="h-full flex flex-col justify-center px-14 sm:px-20">
-
-                        <p className="text-[7px] sm:text-[9px] tracking-[0.35em] text-slate-700 uppercase mb-2">
-                          Certificate of Completion
-                        </p>
-
-
-                        <h4 className="text-lg sm:text-2xl font-black text-slate-800 leading-tight">
-
-                          AI-DRIVEN{' '}
-
-                          <span className="text-indigo-900">
-                            GENERATIVE AI
-                          </span>
-
-                          <br />
-
-                          & AGENTIC ENGINEERING
-
-                        </h4>
-
-
-                        {/* PRESENTED TO */}
-
-                        <div className="mt-5">
-
-                          <p className="text-[7px] text-slate-500 uppercase tracking-widest">
-                            Presented To
-                          </p>
-
-                          <p className="text-base sm:text-xl font-black text-slate-900 mt-1">
-                            Candidate
-                          </p>
-
-                          <div className="h-px bg-slate-400 w-full mt-2" />
-
-                        </div>
-
-
-                        {/* DESCRIPTION */}
-
-                        <p className="text-[6px] sm:text-[8px] text-slate-500 leading-relaxed mt-4 max-w-md">
-
-                          Awarded for the successful completion of
-                          the ABTalks 31-Day AI Cohort and AI Interview
-                          Assessment. This certificate validates
-                          practical knowledge of modern Generative AI
-                          engineering, RAG, Agentic AI, MCP and
-                          production systems.
-
-                        </p>
-
-
-                        {/* BOTTOM */}
-
-                        <div className="flex justify-between items-end mt-5">
-
-                          <div>
-
-                            <div className="w-20 border-b border-slate-500 mb-1" />
-
-                            <p className="text-[6px] text-slate-500">
-                              AI Cohort Instructor
-                            </p>
-
-                          </div>
-
-
-                          <div className="text-right">
-
-                            <p className="text-[7px] text-slate-500">
-                              Credential ID
-                            </p>
-
-                            <p className="text-[7px] font-bold text-slate-800">
-                              ABT-2026-AI-001
-                            </p>
-
-                          </div>
-
-                        </div>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
             </section>
 
 
@@ -642,27 +423,15 @@ export default function LandingPage({ onStartInterview }) {
             <section className="py-16 border-t border-slate-800/80">
 
               <div className="text-center mb-12">
-
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  PLACEMENT STORIES
-                </span>
-
-                <h2 className="text-3xl font-black text-white">
-                  What Our Cohort Graduates Say
-                </h2>
-
+                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">PLACEMENT STORIES</span>
+                <h2 className="text-3xl font-black text-white">What Our Cohort Graduates Say</h2>
               </div>
 
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 {reviews.map((r, idx) => (
-
-                  <div
-                    key={idx}
-                    className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between"
-                  >
-
+                  <div key={idx} className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
                     <div>
 
                       <div className="flex gap-1 text-amber-400 mb-4">
@@ -677,12 +446,7 @@ export default function LandingPage({ onStartInterview }) {
                         ))}
 
                       </div>
-
-
-                      <p className="text-xs text-slate-300 leading-relaxed italic">
-                        "{r.review}"
-                      </p>
-
+                      <p className="text-xs text-slate-300 leading-relaxed italic">"{r.review}"</p>
                     </div>
 
 
@@ -693,15 +457,8 @@ export default function LandingPage({ onStartInterview }) {
                       </div>
 
                       <div>
-
-                        <h4 className="font-bold text-xs text-white">
-                          {r.name}
-                        </h4>
-
-                        <p className="text-[10px] text-indigo-400 font-mono font-semibold">
-                          {r.role}
-                        </p>
-
+                        <h4 className="font-bold text-xs text-white">{r.name}</h4>
+                        <p className="text-[10px] text-emerald-400 font-mono font-semibold">{r.role}</p>
                       </div>
 
                     </div>
@@ -722,27 +479,15 @@ export default function LandingPage({ onStartInterview }) {
             <section className="py-16 border-t border-slate-800/80 max-w-4xl mx-auto">
 
               <div className="text-center mb-12">
-
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
-                  GOT QUESTIONS?
-                </span>
-
-                <h2 className="text-3xl font-black text-white">
-                  Frequently Asked Questions
-                </h2>
-
+                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">GOT QUESTIONS?</span>
+                <h2 className="text-3xl font-black text-white">Frequently Asked Questions</h2>
               </div>
 
 
               <div className="space-y-4">
 
                 {faqs.map((f, idx) => (
-
-                  <div
-                    key={idx}
-                    className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden"
-                  >
-
+                  <div key={idx} className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
                     <button
                       onClick={() =>
                         setOpenFaq(openFaq === idx ? null : idx)
@@ -751,13 +496,7 @@ export default function LandingPage({ onStartInterview }) {
                     >
 
                       <span>{f.q}</span>
-
-                      {openFaq === idx ? (
-                        <ChevronUp className="w-4 h-4 text-indigo-400" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4 text-slate-500" />
-                      )}
-
+                      {openFaq === idx ? <ChevronUp className="w-4 h-4 text-indigo-400" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
                     </button>
 
 
@@ -780,13 +519,8 @@ export default function LandingPage({ onStartInterview }) {
           </div>
         )}
 
-
-        {/* =====================================================
-            TAB 2 - CANDIDATE ROSTER
-        ===================================================== */}
-
+        {/* TAB 2: INTERVIEW CANDIDATE ROSTER GRID */}
         {activeTab === 'roster' && (
-
           <div className="mt-12">
 
             <div className="flex justify-between items-center mb-8 border-b border-slate-800/80 pb-4">
@@ -794,18 +528,9 @@ export default function LandingPage({ onStartInterview }) {
               <div>
 
                 <h2 className="text-2xl font-black text-white flex items-center gap-2">
-
-                  <Users className="w-6 h-6 text-indigo-400" />
-
-                  ABTalks Technical Interview Portal
-
+                  <Users className="w-6 h-6 text-indigo-400" /> ABTalks Technical Interview Portal
                 </h2>
-
-                <p className="text-xs text-slate-400 mt-1">
-                  Select a candidate to start the adaptive LLM
-                  technical assessment.
-                </p>
-
+                <p className="text-xs text-slate-400 mt-1">Select a candidate to start the adaptive LLM technical assessment[cite: 2].</p>
               </div>
 
 
@@ -821,20 +546,9 @@ export default function LandingPage({ onStartInterview }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
               {candidates.map((item) => {
-
-                const {
-                  member,
-                  missions,
-                  signals,
-                } = item;
-
-                const passedMissions = missions.filter(
-                  (m) => m.passed
-                ).length;
-
-                const completionPercentage = Math.round(
-                  (passedMissions / missions.length) * 100
-                );
+                const { member, missions, signals } = item;
+                const passedMissions = missions.filter((m) => m.passed).length;
+                const completionPercentage = Math.round((passedMissions / missions.length) * 100);
 
                 return (
 
@@ -866,33 +580,14 @@ export default function LandingPage({ onStartInterview }) {
                       <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition">
                         {member.name}
                       </h3>
-
-
-                      <p className="text-xs text-slate-400 mt-1 font-medium">
-                        {member.jobRole} • {member.yearsExperience} Yrs Exp
-                      </p>
-
-
-                      <p className="text-[11px] text-slate-500 font-mono mt-0.5">
-                        {member.education}
-                      </p>
-
-
-                      {/* PROGRESS */}
+                      <p className="text-xs text-slate-400 mt-1 font-medium">{member.jobRole} • {member.yearsExperience} Yrs Exp</p>
+                      <p className="text-[11px] text-slate-500 font-mono mt-0.5">{member.education}</p>
 
                       <div className="mt-5 pt-4 border-t border-slate-800/80">
 
                         <div className="flex justify-between text-xs mb-1.5 font-mono">
-
-                          <span className="text-slate-400">
-                            Missions Completed
-                          </span>
-
-                          <span className="text-indigo-400 font-bold">
-                            {passedMissions}/{missions.length} (
-                            {completionPercentage}%)
-                          </span>
-
+                          <span className="text-slate-400">Missions Completed</span>
+                          <span className="text-indigo-400 font-bold">{passedMissions}/{missions.length} ({completionPercentage}%)</span>
                         </div>
 
 
@@ -915,28 +610,14 @@ export default function LandingPage({ onStartInterview }) {
                       <div className="grid grid-cols-2 gap-2 mt-4 text-[11px] font-mono text-slate-400">
 
                         <div className="bg-slate-950/60 p-2 rounded-lg border border-slate-800">
-
-                          <span>
-                            Commit Days:{' '}
-                          </span>
-
-                          <span className="text-white font-bold">
-                            {signals?.commitDays || 0}
-                          </span>
-
+                          <span>Commit Days: </span>
+                          <span className="text-white font-bold">{signals?.commitDays || 0}</span>
                         </div>
 
 
                         <div className="bg-slate-950/60 p-2 rounded-lg border border-slate-800">
-
-                          <span>
-                            First Try:{' '}
-                          </span>
-
-                          <span className="text-indigo-400 font-bold">
-                            {signals?.missionsFirstTry || 0}
-                          </span>
-
+                          <span>First Try: </span>
+                          <span className="text-emerald-400 font-bold">{signals?.missionsFirstTry || 0}</span>
                         </div>
 
                       </div>
@@ -948,11 +629,7 @@ export default function LandingPage({ onStartInterview }) {
                       onClick={() => onStartInterview(item)}
                       className="w-full mt-6 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-lg shadow-indigo-600/25 cursor-pointer text-xs"
                     >
-
-                      <Play className="w-4 h-4 fill-current" />
-
-                      Start Interview Assessment
-
+                      <Play className="w-4 h-4 fill-current" /> Start Interview Assessment
                     </button>
 
                   </div>
@@ -968,23 +645,14 @@ export default function LandingPage({ onStartInterview }) {
         )}
 
 
-        {/* =====================================================
-            TAB 3 - CURRICULUM
-        ===================================================== */}
-
+        {/* TAB 3: CURRICULUM ACCORDION */}
         {activeTab === 'curriculum' && (
-
           <div className="mt-12 max-w-5xl mx-auto">
 
             <div className="text-center mb-10">
-
-              <h2 className="text-3xl font-black text-white">
-                31-Day AI Cohort Syllabus
-              </h2>
-
+              <h2 className="text-3xl font-black text-white">31-Day AI Cohort Syllabus</h2>
               <p className="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
-                Step-by-step breakdown of tools, RAG architectures,
-                and agentic workflows trained during the 31-day cohort.
+                Step-by-step breakdown of tools, RAG architectures, and agentic workflows trained during the 31-day cohort[cite: 4].
               </p>
 
             </div>
@@ -995,12 +663,7 @@ export default function LandingPage({ onStartInterview }) {
               {modules.map((mod) => {
 
                 const isExpanded = openModule === mod.n;
-
-                const moduleDays = days.filter(
-                  (d) =>
-                    d.day >= mod.days[0] &&
-                    d.day <= mod.days[1]
-                );
+                const moduleDays = days.filter(d => d.day >= mod.days[0] && d.day <= mod.days[1]);
 
                 return (
 
@@ -1032,12 +695,7 @@ export default function LandingPage({ onStartInterview }) {
                             Days {mod.days[0]} - {mod.days[1]}
 
                           </span>
-
-
-                          <h3 className="text-lg font-bold text-white">
-                            {mod.title}
-                          </h3>
-
+                          <h3 className="text-lg font-bold text-white">{mod.title}</h3>
                         </div>
 
                       </div>
@@ -1072,12 +730,7 @@ export default function LandingPage({ onStartInterview }) {
                       <div className="px-6 pb-6 pt-2 border-t border-slate-800/60 bg-slate-950/40 space-y-4">
 
                         {moduleDays.map((d) => (
-
-                          <div
-                            key={d.day}
-                            className="bg-slate-900/90 border border-slate-800 rounded-xl p-4"
-                          >
-
+                          <div key={d.day} className="bg-slate-900/90 border border-slate-800 rounded-xl p-4">
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
 
                               <div className="flex items-center gap-3">
@@ -1087,12 +740,7 @@ export default function LandingPage({ onStartInterview }) {
                                   Day {d.day}
 
                                 </span>
-
-
-                                <h4 className="font-bold text-sm text-slate-100">
-                                  {d.title}
-                                </h4>
-
+                                <h4 className="font-bold text-sm text-slate-100">{d.title}</h4>
                               </div>
 
 
@@ -1108,11 +756,7 @@ export default function LandingPage({ onStartInterview }) {
                             <div className="flex flex-wrap gap-1.5 my-3">
 
                               {d.tools?.map((tool, idx) => (
-
-                                <span
-                                  key={idx}
-                                  className="text-[10px] font-mono bg-slate-950 text-indigo-300 border border-slate-800/80 px-2.5 py-1 rounded-md"
-                                >
+                                <span key={idx} className="text-[10px] font-mono bg-slate-950 text-indigo-300 border border-slate-800/80 px-2.5 py-1 rounded-md">
                                   {tool}
                                 </span>
 
@@ -1124,18 +768,8 @@ export default function LandingPage({ onStartInterview }) {
                             <ul className="space-y-1 mt-2">
 
                               {d.objectives?.map((obj, i) => (
-
-                                <li
-                                  key={i}
-                                  className="text-xs text-slate-400 flex items-start gap-2"
-                                >
-
-                                  <span className="text-indigo-400 font-bold">
-                                    •
-                                  </span>
-
-                                  {obj}
-
+                                <li key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                                  <span className="text-indigo-400 font-bold">•</span> {obj}
                                 </li>
 
                               ))}
@@ -1161,7 +795,6 @@ export default function LandingPage({ onStartInterview }) {
           </div>
 
         )}
-
       </main>
 
 
@@ -1172,9 +805,7 @@ export default function LandingPage({ onStartInterview }) {
       <footer className="border-t border-slate-800/80 bg-slate-950 py-12 px-6 relative z-10 font-sans">
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-
-          {/* BRAND */}
-
+          
           <div className="md:col-span-2">
 
             <div className="flex items-center gap-3 mb-4">
@@ -1182,20 +813,12 @@ export default function LandingPage({ onStartInterview }) {
               <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
                 AB
               </div>
-
-              <span className="font-extrabold text-white text-lg">
-                ABTalks AI Cohort
-              </span>
-
+              <span className="font-extrabold text-white text-lg">ABTalks AI Cohort</span>
             </div>
 
 
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed mb-4">
-
-              Empowering engineers to build production-grade
-              Generative AI, Multi-Agent Systems, and Vector RAG
-              pipelines evaluated by intelligent assessment agents.
-
+              Empowering engineers to build production-grade Generative AI, Multi-Agent Systems, and Vector RAG pipelines evaluated by intelligent assessment agents[cite: 2, 4].
             </p>
 
 
@@ -1209,18 +832,12 @@ export default function LandingPage({ onStartInterview }) {
           {/* QUICK LINKS */}
 
           <div>
-
-            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">
-              Quick Links
-            </h4>
-
-
+            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">Quick Links</h4>
             <ul className="space-y-2 text-xs text-slate-400">
 
               <li>
-
-                <button
-                  onClick={() => setActiveTab('home')}
+                <button 
+                  onClick={() => setActiveTab('home')} 
                   className="hover:text-indigo-400 cursor-pointer"
                 >
                   Cohort Overview
@@ -1230,9 +847,8 @@ export default function LandingPage({ onStartInterview }) {
 
 
               <li>
-
-                <button
-                  onClick={() => setActiveTab('curriculum')}
+                <button 
+                  onClick={() => setActiveTab('curriculum')} 
                   className="hover:text-indigo-400 cursor-pointer"
                 >
                   31-Day Syllabus
@@ -1242,9 +858,8 @@ export default function LandingPage({ onStartInterview }) {
 
 
               <li>
-
-                <button
-                  onClick={() => setActiveTab('roster')}
+                <button 
+                  onClick={() => setActiveTab('roster')} 
                   className="hover:text-indigo-400 cursor-pointer"
                 >
                   Candidate Roster
@@ -1260,42 +875,19 @@ export default function LandingPage({ onStartInterview }) {
           {/* TECH STACK */}
 
           <div>
-
-            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">
-              Core Tech Stack
-            </h4>
-
-
+            <h4 className="font-bold text-xs text-white uppercase tracking-wider mb-4">Core Tech Stack</h4>
             <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-indigo-300">
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Groq LLM
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Breeth Memory
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                FastAPI
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                React + Vite
-              </span>
-
-              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">
-                Tailwind CSS
-              </span>
-
+              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">Groq LLM</span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">Breeth Memory</span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">FastAPI</span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">React + Vite</span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-1 rounded">Tailwind CSS</span>
             </div>
 
           </div>
-
         </div>
 
       </footer>
-
     </div>
   );
 }
