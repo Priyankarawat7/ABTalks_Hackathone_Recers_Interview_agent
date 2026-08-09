@@ -1,4 +1,4 @@
-import React from 'react';
+import logo from "../assets/logo-1.png"
 
 function Footer() {
   return (
@@ -10,14 +10,14 @@ function Footer() {
         <div className="md:col-span-2">
 
           <div className="flex items-center gap-3 mb-4">
-
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
+            <img className="h-10" src={logo} alt="" srcset="" />
+            {/* <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">
               AB
             </div>
 
             <span className="font-extrabold text-white text-lg">
               ABTalks AI Cohort
-            </span>
+            </span> */}
 
           </div>
 
