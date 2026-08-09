@@ -472,22 +472,39 @@ export default function LandingPage({ onStartInterview }) {
             </section>
 
 
-            {/* =================================================
-                FAQ
-            ================================================= */}
+    
+{/* =====================================================
+    FAQ SECTION
+===================================================== */}
 
-            <section className="py-16 border-t border-slate-800/80 max-w-4xl mx-auto">
+<section className="py-20 border-t border-slate-800/80 max-w-4xl mx-auto">
+
+  {/* ================= HEADING ================= */}
 
               <div className="text-center mb-12">
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">GOT QUESTIONS?</span>
-                <h2 className="text-3xl font-black text-white">Frequently Asked Questions</h2>
+
+                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
+                  GOT QUESTIONS?
+                </span>
+
+                <h2 className="text-3xl font-black text-white">
+                  Frequently Asked Questions
+                </h2>
+
               </div>
 
 
-              <div className="space-y-4">
+  {/* ================= FAQ LIST ================= */}
+
+  <div className="space-y-4">
 
                 {faqs.map((f, idx) => (
-                  <div key={idx} className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+
+                  <div
+                    key={idx}
+                    className="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden"
+                  >
+
                     <button
                       onClick={() =>
                         setOpenFaq(openFaq === idx ? null : idx)
@@ -496,25 +513,123 @@ export default function LandingPage({ onStartInterview }) {
                     >
 
                       <span>{f.q}</span>
-                      {openFaq === idx ? <ChevronUp className="w-4 h-4 text-indigo-400" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
+
+                      {openFaq === idx ? (
+                        <ChevronUp className="w-4 h-4 text-indigo-400" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-slate-500" />
+                      )}
+
                     </button>
 
 
-                    {openFaq === idx && (
+          {/* =================================================
+              ANSWER ANIMATION
+          ================================================= */}
 
-                      <div className="px-5 pb-5 pt-1 text-xs text-slate-400 border-t border-slate-800/60 leading-relaxed">
-                        {f.a}
-                      </div>
+          <div
+            className={`
+              grid
+              transition-all
+              duration-700
+              ease-[cubic-bezier(0.16,1,0.3,1)]
 
-                    )}
+              ${
+                isOpen
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
+              }
+            `}
+          >
+
+            <div className="overflow-hidden">
+
+              <div
+                className={`
+                  px-5
+                  sm:px-6
+                  pb-6
+
+                  transition-all
+                  duration-700
+
+                  ${
+                    isOpen
+                      ? "translate-y-0 scale-100"
+                      : "-translate-y-5 scale-95"
+                  }
+                `}
+              >
+
+                <div className="border-t border-purple-500/20 pt-5">
+
+                  <div className="flex gap-4">
+
+                    {/* ================= ANIMATED LINE ================= */}
+
+                    <div
+                      className={`
+                        w-1
+                        shrink-0
+                        rounded-full
+                        bg-gradient-to-b
+                        from-indigo-400
+                        via-purple-500
+                        to-pink-500
+
+                        transition-all
+                        duration-700
+
+                        ${
+                          isOpen
+                            ? "h-auto opacity-100 scale-y-100"
+                            : "h-0 opacity-0 scale-y-0"
+                        }
+                      `}
+                    />
+
+
+                    {/* ================= ANSWER ================= */}
+
+                    <p
+                      className={`
+                        text-sm
+                        text-slate-400
+                        leading-7
+
+                        transition-all
+                        duration-700
+                        delay-100
+
+                        ${
+                          isOpen
+                            ? "translate-x-0 opacity-100"
+                            : "translate-x-5 opacity-0"
+                        }
+                      `}
+                    >
+                      {f.a}
+                    </p>
 
                   </div>
 
-                ))}
+                </div>
 
               </div>
 
-            </section>
+            </div>
+
+          </div>
+
+        </div>
+
+      );
+
+    })}
+
+  </div>
+
+</section>
 
           </div>
         )}
